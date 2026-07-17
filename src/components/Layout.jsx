@@ -5,7 +5,7 @@ import { EditProvider } from '@/components/edit/EditProvider';
 import { EditableText } from '@/components/edit/Editable';
 import EditToolbar from '@/components/edit/EditToolbar';
 
-const SLICE_LOGO = 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/040f619ea_slice-logo-watermark.png';
+const BRAND_LOGO = 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/1c120a191_WeWaveSocialsStorefrontLogo.png';
 
 const NAV = [
   { label: 'Home', to: '/' },
@@ -34,9 +34,7 @@ export default function Layout() {
         <header className={`sticky top-0 z-50 transition-all ${scrolled ? 'bg-background/85 backdrop-blur-xl border-b border-border' : 'bg-transparent'}`}>
           <div className="container-wide flex h-[68px] items-center justify-between gap-6">
             <Link to="/" className="flex items-center gap-3 group">
-              <span className="relative grid h-10 w-10 place-items-center overflow-hidden rounded-full ring-1 ring-border bg-card">
-                <img src={SLICE_LOGO} alt="Slice of Hawaiʻi" className="h-full w-full object-cover" />
-              </span>
+              <img src={BRAND_LOGO} alt="WeWave Socials" className="h-11 w-11 rounded-xl object-cover ring-1 ring-border" />
               <span className="flex flex-col leading-none">
                 <EditableText id="nav.brand.sub" as="span" className="text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Content & Social</EditableText>
                 <EditableText id="nav.brand.name" as="span" className="font-heading text-[17px] font-extrabold tracking-tight text-primary">WeWave Socials</EditableText>
@@ -89,9 +87,7 @@ export default function Layout() {
             <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
               <div className="max-w-sm">
                 <Link to="/" className="flex items-center gap-3">
-                  <span className="grid h-10 w-10 place-items-center overflow-hidden rounded-full ring-1 ring-border bg-card">
-                    <img src={SLICE_LOGO} alt="Slice of Hawaiʻi" className="h-full w-full object-cover" />
-                  </span>
+                  <img src={BRAND_LOGO} alt="WeWave Socials" className="h-11 w-11 rounded-xl object-cover ring-1 ring-border" />
                   <EditableText id="footer.brand" as="span" className="font-heading text-[17px] font-extrabold tracking-tight text-primary">WeWave Socials</EditableText>
                 </Link>
                 <EditableText id="footer.tagline" as="p" className="mt-4 text-sm leading-relaxed text-muted-foreground" block>
@@ -113,7 +109,7 @@ export default function Layout() {
 
             <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row">
               <span>© {new Date().getFullYear()} WeWave Socials — temporary working brand</span>
-              <img src={SLICE_LOGO} alt="Slice of Hawaiʻi watermark" className="h-9 w-9 rounded-full opacity-80 ring-1 ring-border" />
+              <img src={BRAND_LOGO} alt="WeWave Socials watermark" className="h-9 w-9 rounded-xl opacity-80 ring-1 ring-border" />
             </div>
           </div>
         </footer>

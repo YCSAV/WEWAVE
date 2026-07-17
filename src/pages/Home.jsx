@@ -341,7 +341,6 @@ export default function Home() {
             <img src={ABOUT_IMG} alt="On-location production in Honolulu, Hawaiʻi" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/45 to-primary/15" />
             <div className="relative flex min-h-[440px] flex-col justify-end p-8 sm:p-10">
-              <img src={BRAND_LOGO} alt="WeWave Socials" className="pointer-events-none absolute left-8 top-8 h-14 w-14 rounded-full object-cover opacity-90 ring-1 ring-background/30 sm:left-10 sm:top-10" />
               <span className="eyebrow text-background/80"><EditableText id="home.about.eyebrow" as="span">About Us</EditableText></span>
               <h2 className="mt-3 font-heading text-3xl font-extrabold leading-tight tracking-tight text-background sm:text-4xl">
                 <EditableText id="home.about.h2" as="span" block>Creative production with a clear business purpose.</EditableText>

@@ -32,41 +32,52 @@ export default function Ecosystem() {
       </section>
 
       <section className="py-16 sm:py-24">
-        <div className="container-wide grid gap-6 lg:grid-cols-3">
-          {PHASES.map((p, i) => {
-            const Icon = p.icon;
-            const featured = i === 2;
-            return (
-              <Movable key={p.no} id={`eco.phase.${i}`}>
-                <article className={`relative flex h-full flex-col overflow-hidden rounded-3xl border p-7 sm:p-8 ${featured ? 'border-accent/40 bg-accent/5' : 'border-border bg-card'}`}>
-                  <Icon className="pointer-events-none absolute -bottom-8 -right-6 h-44 w-44 text-primary opacity-[0.06]" />
-                  <div className="relative flex items-center justify-between">
-                    <EditableText id={`eco.phase.${i}.no`} as="span" className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Phase {p.no}</EditableText>
-                    <div className="flex items-center gap-2">
-                      {p.devices.map((D, k) => (
-                        <span key={k} title={D === Smartphone ? 'Short-form (vertical)' : 'Long-form (horizontal)'} className="grid h-12 w-12 place-items-center rounded-2xl bg-primary text-primary-foreground"><D className="h-6 w-6" /></span>
-                      ))}
+        <div className="container-wide">
+          <div className="mb-10 max-w-2xl">
+            <span className="eyebrow"><EditableText id="eco.pkg.eyebrow" as="span">Service Packages</EditableText></span>
+            <h2 className="mt-4 font-heading text-3xl font-extrabold leading-tight tracking-tight text-primary sm:text-4xl">
+              <EditableText id="eco.pkg.h2" as="span" block>Three packages, ready to choose from.</EditableText>
+            </h2>
+            <EditableText id="eco.pkg.sub" as="p" className="mt-4 text-muted-foreground" block>
+              Each phase is a standalone package with its own scope and pricing — pick the one that fits your goals, or combine them as your needs grow.
+            </EditableText>
+          </div>
+          <div className="grid gap-6 lg:grid-cols-3">
+            {PHASES.map((p, i) => {
+              const Icon = p.icon;
+              const featured = i === 2;
+              return (
+                <Movable key={p.no} id={`eco.phase.${i}`}>
+                  <article className={`relative flex h-full flex-col overflow-hidden rounded-3xl border p-7 sm:p-8 ${featured ? 'border-accent/40 bg-accent/5' : 'border-border bg-card'}`}>
+                    <Icon className="pointer-events-none absolute -bottom-8 -right-6 h-44 w-44 text-primary opacity-[0.06]" />
+                    <div className="relative flex items-center justify-between">
+                      <EditableText id={`eco.phase.${i}.no`} as="span" className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Phase {p.no}</EditableText>
+                      <div className="flex items-center gap-2">
+                        {p.devices.map((D, k) => (
+                          <span key={k} title={D === Smartphone ? 'Short-form (vertical)' : 'Long-form (horizontal)'} className="grid h-12 w-12 place-items-center rounded-2xl bg-primary text-primary-foreground"><D className="h-6 w-6" /></span>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                  <h2 className="mt-5 font-heading text-2xl font-extrabold tracking-tight text-primary"><EditableText id={`eco.phase.${i}.t`} as="span">{p.title}</EditableText></h2>
-                  <EditableText id={`eco.phase.${i}.d`} as="p" className="mt-3 text-sm leading-relaxed text-muted-foreground" block>{p.desc}</EditableText>
-                  <ul className="relative mt-6 space-y-3 border-t border-border pt-5">
-                    {p.items.map((it, j) => (
-                      <li key={j} className="flex items-start gap-2.5 text-sm text-foreground">
-                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                        <EditableText id={`eco.phase.${i}.item.${j}`} as="span" block>{it}</EditableText>
-                      </li>
-                    ))}
-                  </ul>
-                </article>
-              </Movable>
-            );
-          })}
-        </div>
+                    <h2 className="mt-5 font-heading text-2xl font-extrabold tracking-tight text-primary"><EditableText id={`eco.phase.${i}.t`} as="span">{p.title}</EditableText></h2>
+                    <EditableText id={`eco.phase.${i}.d`} as="p" className="mt-3 text-sm leading-relaxed text-muted-foreground" block>{p.desc}</EditableText>
+                    <ul className="relative mt-6 space-y-3 border-t border-border pt-5">
+                      {p.items.map((it, j) => (
+                        <li key={j} className="flex items-start gap-2.5 text-sm text-foreground">
+                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                          <EditableText id={`eco.phase.${i}.item.${j}`} as="span" block>{it}</EditableText>
+                        </li>
+                      ))}
+                    </ul>
+                  </article>
+                </Movable>
+              );
+            })}
+          </div>
 
-        <p className="mt-10 flex flex-wrap items-center justify-center gap-2 text-center text-sm text-muted-foreground">
-          <EditableText id="eco.phases.footnote" as="span" block>Pricing available upon request — and custom packages are available for clients whose needs fall between or beyond these phases.</EditableText>
-        </p>
+          <p className="mt-10 flex flex-wrap items-center justify-center gap-2 text-center text-sm text-muted-foreground">
+            <EditableText id="eco.phases.footnote" as="span" block>Pricing available upon request — and custom packages are available for clients whose needs fall between or beyond these phases.</EditableText>
+          </p>
+        </div>
       </section>
 
       <section className="border-t border-border bg-secondary/30 py-16 sm:py-24">

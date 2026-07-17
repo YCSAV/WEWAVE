@@ -288,9 +288,21 @@ export default function Home() {
             <h2 className="mt-4 font-heading text-3xl font-extrabold leading-tight tracking-tight text-primary sm:text-4xl">
               <EditableText id="home.about.h2" as="span" block>Creative production with a clear business purpose.</EditableText>
             </h2>
-            <div className="mt-6 rounded-2xl border border-border bg-card p-5">
+            <div className="mt-6 rounded-2xl border border-border bg-card p-4">
               <EditableText id="home.about.badge.t" as="strong" className="block font-heading font-bold text-primary" block>One integrated team.</EditableText>
               <EditableText id="home.about.badge.s" as="span" className="text-sm text-muted-foreground" block>Strategy. Production. Distribution. Optimization.</EditableText>
+            </div>
+            <div className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
+              <svg viewBox="0 0 64 20" className="h-5 w-16 shrink-0 text-accent" fill="currentColor" aria-hidden="true">
+                <circle cx="4" cy="10" r="1.2" />
+                <circle cx="11" cy="9.5" r="2.6" />
+                <path d="M20 8.4q3.6-3 6.6.9 1 3-3.6 3-4 0-3-3.9z" />
+                <circle cx="33" cy="11" r="1.7" />
+                <circle cx="38" cy="10.5" r="1.4" />
+                <path d="M43.5 9q3.2-4.6 6.6-.1.8 3-3 2.6-4 0-3.6-2.5z" />
+                <ellipse cx="57" cy="11" rx="6.5" ry="5.4" />
+              </svg>
+              <EditableText id="home.about.loc" as="span">Based in Honolulu, Hawaiʻi</EditableText>
             </div>
           </div>
 

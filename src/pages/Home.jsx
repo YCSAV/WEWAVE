@@ -21,6 +21,13 @@ const PRODUCTION_STEPS = [
   { icon: 'SlidersHorizontal', title: 'Editing', desc: 'Professional editing, color, audio, and polished delivery.' },
 ];
 
+const WHERE_IT_LIVES = [
+  { icon: 'MessageCircle', name: 'Social Feeds', note: 'Reels, Stories, Shorts' },
+  { icon: 'Play', name: 'YouTube', note: 'Episodes & series' },
+  { icon: 'Globe', name: 'Website', note: 'Hero & landing video' },
+  { icon: 'Megaphone', name: 'Paid Ads', note: 'Cut-downs for campaigns' },
+];
+
 const DISTRIBUTION = [
   { name: 'Instagram', note: 'Feed, Stories, Reels', brand: 'Instagram' },
   { name: 'TikTok', note: 'Short-form content', brand: 'TikTok' },
@@ -129,6 +136,21 @@ export default function Home() {
                       </span>
                       <EditableText id={`home.svc.video.step.${i}.t`} as="strong" className="mt-3 block text-sm font-bold text-primary" block>{s.title}</EditableText>
                       <EditableText id={`home.svc.video.step.${i}.d`} as="p" className="mt-1 text-xs leading-snug text-muted-foreground" block>{s.desc}</EditableText>
+                    </div>
+                  ))}
+                </div>
+
+                <EditableText id="home.svc.video.where.lbl" as="span" className="mt-7 text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground" block>Where It Lives</EditableText>
+                <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                  {WHERE_IT_LIVES.map((p, i) => (
+                    <div key={i} className="flex items-center gap-3 rounded-xl border border-border bg-background/60 p-3">
+                      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-accent/10 text-accent">
+                        <EditableIcon id={`home.svc.video.where.${i}.icon`} as={LUCIDE[p.icon]} iconClass="h-5 w-5" />
+                      </span>
+                      <div className="min-w-0">
+                        <EditableText id={`home.svc.video.where.${i}.n`} as="strong" className="block text-sm font-semibold text-primary" block>{p.name}</EditableText>
+                        <EditableText id={`home.svc.video.where.${i}.note`} as="span" className="text-xs text-muted-foreground" block>{p.note}</EditableText>
+                      </div>
                     </div>
                   ))}
                 </div>

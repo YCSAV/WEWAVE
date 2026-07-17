@@ -63,6 +63,10 @@ export default function Ecosystem() {
             );
           })}
         </div>
+
+        <p className="mt-10 flex flex-wrap items-center justify-center gap-2 text-center text-sm text-muted-foreground">
+          <EditableText id="eco.phases.footnote" as="span" block>Pricing available upon request — and custom packages are available for clients whose needs fall between or beyond these phases.</EditableText>
+        </p>
       </section>
 
       <section className="border-t border-border bg-secondary/30 py-16 sm:py-24">

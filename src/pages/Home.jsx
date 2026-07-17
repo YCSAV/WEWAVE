@@ -234,6 +234,9 @@ export default function Home() {
               <EditableText id="home.rel.3" as="span">Optimization creates growth</EditableText>
             </span>
           </div>
+          <p className="mt-6 text-center text-sm text-muted-foreground">
+            <EditableText id="home.svc.footnote" as="span">Services are available either separately or as a package.</EditableText>
+          </p>
         </div>
       </section>
 

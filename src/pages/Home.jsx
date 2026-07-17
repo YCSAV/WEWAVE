@@ -16,9 +16,9 @@ const TRUST = [
 ];
 
 const PLAN_STEPS = [
-  { icon: 'PenTool', title: 'Creative Direction', desc: 'Concepts shaped around your brand and goals.' },
-  { icon: 'MessageCircle', title: 'Customer Feedback', desc: 'Audience insights guide the direction.' },
-  { icon: 'Layers', title: 'Storyboarding', desc: 'Every shot planned before we roll.' },
+  { icon: 'PenTool', title: 'Creative Direction', desc: 'Concepts around your brand' },
+  { icon: 'MessageCircle', title: 'Customer Feedback', desc: 'Insights guide direction' },
+  { icon: 'Layers', title: 'Storyboarding', desc: 'Planned before we roll' },
 ];
 
 const PROD_STEPS = [
@@ -124,32 +124,33 @@ export default function Home() {
                     <EditableText id="home.svc.video.sub" as="p" className="text-sm text-muted-foreground">Story-driven content that connects.</EditableText>
                   </div>
                 </div>
-                <EditableText id="home.svc.video.body" as="p" className="mt-5 leading-relaxed text-muted-foreground" block>
+                <EditableText id="home.svc.video.body" as="p" className="mt-5 min-h-[5rem] leading-relaxed text-muted-foreground" block>
                   From fast-moving vertical content to cinematic long-form storytelling, we create media that makes the brand look as strong online as it is in real life.
                 </EditableText>
 
                 <EditableText id="home.svc.video.plan.lbl" as="span" className="mt-7 text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground" block>Planning</EditableText>
-                <div className="mt-3 grid gap-4 sm:grid-cols-3">
+                <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   {PLAN_STEPS.map((s, i) => (
-                    <div key={i} className="rounded-2xl border border-border bg-background/60 p-4">
-                      <span className="grid h-10 w-10 place-items-center rounded-xl bg-accent/10 text-accent">
+                    <div key={i} className="flex items-center gap-3 rounded-xl border border-border bg-background/60 p-3">
+                      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-accent/10 text-accent">
                         <EditableIcon id={`home.svc.video.plan.${i}.icon`} as={LUCIDE[s.icon]} iconClass="h-5 w-5" />
                       </span>
-                      <EditableText id={`home.svc.video.plan.${i}.t`} as="strong" className="mt-3 block text-sm font-bold text-primary" block>{s.title}</EditableText>
-                      <EditableText id={`home.svc.video.plan.${i}.d`} as="p" className="mt-1 text-xs leading-snug text-muted-foreground" block>{s.desc}</EditableText>
+                      <div className="min-w-0">
+                        <EditableText id={`home.svc.video.plan.${i}.t`} as="strong" className="block text-sm font-semibold text-primary" block>{s.title}</EditableText>
+                        <EditableText id={`home.svc.video.plan.${i}.d`} as="span" className="text-xs text-muted-foreground" block>{s.desc}</EditableText>
+                      </div>
                     </div>
                   ))}
                 </div>
 
                 <EditableText id="home.svc.video.prod.lbl" as="span" className="mt-6 text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground" block>Production</EditableText>
-                <div className="mt-3 grid gap-4 sm:grid-cols-4">
+                <div className="mt-3 grid gap-3 sm:grid-cols-4">
                   {PROD_STEPS.map((s, i) => (
-                    <div key={i} className="rounded-2xl border border-border bg-background/60 p-4">
-                      <span className="grid h-10 w-10 place-items-center rounded-xl bg-accent/10 text-accent">
-                        <EditableIcon id={`home.svc.video.prod.${i}.icon`} as={LUCIDE[s.icon]} iconClass="h-5 w-5" />
+                    <div key={i} className="flex items-center gap-2.5 rounded-xl border border-border bg-background/60 p-3">
+                      <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-accent/10 text-accent">
+                        <EditableIcon id={`home.svc.video.prod.${i}.icon`} as={LUCIDE[s.icon]} iconClass="h-4 w-4" />
                       </span>
-                      <EditableText id={`home.svc.video.prod.${i}.t`} as="strong" className="mt-3 block text-sm font-bold text-primary" block>{s.title}</EditableText>
-                      <EditableText id={`home.svc.video.prod.${i}.d`} as="p" className="mt-1 text-xs leading-snug text-muted-foreground" block>{s.desc}</EditableText>
+                      <EditableText id={`home.svc.video.prod.${i}.t`} as="strong" className="text-xs font-semibold leading-tight text-primary" block>{s.title}</EditableText>
                     </div>
                   ))}
                 </div>
@@ -174,7 +175,7 @@ export default function Home() {
                     <EditableText id="home.svc.social.sub" as="p" className="text-sm text-muted-foreground">Content that performs. Communities that grow.</EditableText>
                   </div>
                 </div>
-                <EditableText id="home.svc.social.body" as="p" className="mt-5 leading-relaxed text-muted-foreground" block>
+                <EditableText id="home.svc.social.body" as="p" className="mt-5 min-h-[5rem] leading-relaxed text-muted-foreground" block>
                   We distribute, schedule, manage, and optimize content across the platforms that shape awareness, engagement, and customer growth.
                 </EditableText>
 

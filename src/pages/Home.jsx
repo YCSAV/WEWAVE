@@ -50,6 +50,7 @@ const WORK = [
 const TEAM = [
   { name: 'Jay Ham', role: 'Founder & Creative Director', desc: 'Creative direction, strategy, client relationships, and social media management.' },
   { name: 'Drake Dela Cruz', role: 'Partner & Head Videographer', desc: 'Cinematography, production, visual execution, and lead camera direction.' },
+  { name: 'Nikko Monticello', role: 'Admin & Communications', desc: 'Operations, scheduling, client communications, and keeping every project moving forward.' },
 ];
 
 const SVC_VIDEO_IMG = 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/ff95a23da_generated_image.png';

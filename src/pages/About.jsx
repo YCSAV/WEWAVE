@@ -7,7 +7,8 @@ const SLICE_LOGO = 'https://media.base44.com/images/public/6a5a1601b834ac73c4093
 
 const PEOPLE = [
 { name: 'Jay Ham', role: 'Founder & Creative Director', desc: 'Creative direction, strategy, client relationships, social media management, and campaign development.', icon: Sparkles },
-{ name: 'Drake Dela Cruz', role: 'Partner & Head Videographer', desc: 'Cinematography, production, visual execution, lighting, and lead camera direction.', icon: Camera }];
+{ name: 'Drake Dela Cruz', role: 'Partner & Head Videographer', desc: 'Cinematography, production, visual execution, lighting, and lead camera direction.', icon: Camera },
+{ name: 'Nikko Monticello', role: 'Admin & Communications', desc: 'Operations, scheduling, client communications, and keeping every project moving forward.', icon: Users }];
 
 
 export default function About() {
@@ -66,7 +67,7 @@ export default function About() {
           <div className="max-w-2xl">
             <span className="eyebrow"><EditableText id="about.team.eyebrow" as="span">Who You Work With</EditableText></span>
             <h2 className="mt-4 font-heading text-3xl font-extrabold leading-tight tracking-tight text-primary sm:text-4xl">
-              <EditableText id="about.team.h2" as="span" block>Two operators. One standard.</EditableText>
+              <EditableText id="about.team.h2" as="span" block>Three operators. One standard.</EditableText>
             </h2>
           </div>
           <div className="mt-10 grid gap-6 md:grid-cols-2">

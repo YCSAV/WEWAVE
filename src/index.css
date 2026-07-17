@@ -115,3 +115,10 @@
   stroke-dasharray: 4 6;
   animation: flow-dash 1.4s linear infinite;
 }
+
+/* In-app editing affordances */
+.edit-outline { outline: 1px dashed hsl(var(--accent) / 0.55); outline-offset: 3px; border-radius: 6px; cursor: text; }
+.edit-outline:hover { background: hsl(var(--accent) / 0.06); }
+.movable-outline { outline: 1px dashed hsl(var(--primary) / 0.4); outline-offset: 6px; border-radius: 10px; }
+.dragging { z-index: 50; box-shadow: 0 14px 38px rgba(0,0,0,.18); opacity: .92; }
+[contenteditable="true"] { cursor: text; }

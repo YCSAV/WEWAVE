@@ -10,17 +10,18 @@ const NODES = [
   { n: '04', icon: 'TrendingUp', title: 'Revenue + Customer Growth', caption: 'More traffic, engagement, and sales', pos: 'left' },
 ];
 
+// Each node sits centered on its anchor point so the diagram is perfectly symmetric.
 const POS_CLASS = {
-  top: 'left-1/2 top-[2%] -translate-x-1/2',
-  right: 'top-1/2 right-[2%] -translate-y-1/2',
-  bottom: 'left-1/2 bottom-[2%] -translate-x-1/2',
-  left: 'top-1/2 left-[2%] -translate-y-1/2',
+  top: 'left-1/2 top-0 -translate-x-1/2',
+  right: 'right-0 top-1/2 -translate-y-1/2',
+  bottom: 'left-1/2 bottom-0 -translate-x-1/2',
+  left: 'left-0 top-1/2 -translate-y-1/2',
 };
 
 function NodeCard({ node, idx }) {
   return (
-    <Movable id={`ge.node.${idx}`} className={`absolute w-[38%] max-w-[200px] ${POS_CLASS[node.pos]}`}>
-      <div className="flex flex-col items-center gap-2 rounded-2xl border border-border bg-card/95 px-3 py-4 text-center shadow-sm backdrop-blur-sm">
+    <Movable id={`ge.node.${idx}`} className={`absolute w-[34%] max-w-[210px] ${POS_CLASS[node.pos]}`}>
+      <div className="flex flex-col items-center gap-2 rounded-2xl border border-border bg-card/95 px-4 py-4 text-center shadow-sm backdrop-blur-sm">
         <div className="flex items-center gap-2">
           <span className="grid h-6 w-6 place-items-center rounded-full bg-accent/10 text-[10px] font-bold text-accent">{node.n}</span>
           <span className="grid h-9 w-9 place-items-center rounded-xl bg-primary text-primary-foreground">
@@ -39,7 +40,6 @@ function NodeCard({ node, idx }) {
 }
 
 export default function GrowthEngine() {
-  const { editMode } = useEdit();
   return (
     <div className="relative mx-auto w-full max-w-[460px]">
       {/* Circular diagram (sm+) */}

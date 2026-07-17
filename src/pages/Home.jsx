@@ -284,15 +284,6 @@ export default function Home() {
         <div className="container-wide grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <div className="relative overflow-hidden rounded-3xl border border-border bg-secondary/50 p-8 sm:p-10">
             <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-accent/15 blur-2xl" />
-            <svg viewBox="0 0 200 40" preserveAspectRatio="xMidYEnd meet" className="pointer-events-none absolute -bottom-3 left-1/2 w-[130%] max-w-none -translate-x-1/2 text-accent opacity-[0.08]" fill="currentColor" aria-hidden="true">
-              <circle cx="14" cy="22" r="3" />
-              <circle cx="30" cy="20" r="6" />
-              <path d="M48 16q9-7 16 2 2 7-9 7-10 0-7-9z" />
-              <circle cx="86" cy="22" r="4" />
-              <circle cx="98" cy="21" r="3.4" />
-              <path d="M112 18q8-11 17 0 2 8-8 7-10 0-9-7z" />
-              <ellipse cx="165" cy="22" rx="17" ry="13" />
-            </svg>
             <span className="eyebrow"><EditableText id="home.about.eyebrow" as="span">About Us</EditableText></span>
             <h2 className="mt-4 font-heading text-3xl font-extrabold leading-tight tracking-tight text-primary sm:text-4xl">
               <EditableText id="home.about.h2" as="span" block>Creative production with a clear business purpose.</EditableText>

@@ -56,6 +56,7 @@ const SVC_VIDEO_IMG = 'https://media.base44.com/images/public/6a5a1601b834ac73c4
 const SVC_SOCIAL_IMG = 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/dd1cc73e6_generated_image.png';
 const ABOUT_IMG = 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/58acc856a_generated_image.png';
 const STATS_BG = 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/58acc856a_generated_image.png';
+const HERO_BG = 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/ec472045e_generated_image.png';
 
 const STATS = [
   { value: '2', label: 'Core services — Production + Social', icon: 'Clapperboard' },
@@ -69,8 +70,10 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden">
+        <img src={HERO_BG} alt="" className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-25" loading="lazy" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/40" />
         <div className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[520px] rounded-full bg-accent/10 blur-3xl" />
-        <div className="container-wide grid items-center gap-12 py-14 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8">
+        <div className="relative container-wide grid items-center gap-12 py-14 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8">
           <div>
             <span className="eyebrow"><Sparkles className="h-3.5 w-3.5" />
               <EditableText id="home.hero.kicker" as="span">A Modern Digital Agency</EditableText>

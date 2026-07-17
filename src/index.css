@@ -123,6 +123,12 @@
 }
 
 @keyframes flywheel-spin { to { transform: rotate(360deg); } }
+
+@keyframes arrow-pulse-right {
+  0%, 100% { transform: translateX(0); opacity: .45; }
+  50% { transform: translateX(3px); opacity: 1; }
+}
+.arrow-move { animation: arrow-pulse-right 1.1s ease-in-out infinite; }
 .flywheel-spin {
   animation: flywheel-spin 30s linear infinite;
   transform-box: fill-box;

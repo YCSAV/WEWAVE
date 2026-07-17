@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Clapperboard, Share2, Lightbulb, Camera, SlidersHorizontal, ArrowUpRight, Sparkles, Play,
+  Clapperboard, Share2, Lightbulb, Camera, SlidersHorizontal, ArrowUpRight, Sparkles, Play, ArrowRight,
 } from 'lucide-react';
 import GrowthEngine from '@/components/GrowthEngine';
 import { EditableText, EditableIcon, Movable, LUCIDE } from '@/components/edit/Editable';
@@ -104,10 +104,15 @@ export default function Home() {
       <div className="border-y border-border bg-secondary/40">
         <div className="container-wide flex flex-wrap items-center justify-center gap-x-8 gap-y-3 py-5 sm:justify-between">
           {TRUST.map((t, i) => (
-            <span key={i} className="inline-flex items-center gap-2">
-              <EditableIcon id={`home.trust.${i}.icon`} as={LUCIDE[t.icon]} iconClass="h-4 w-4" colorClass="text-accent" />
-              <EditableText id={`home.trust.${i}`} as="span" className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">{t.label}</EditableText>
-            </span>
+            <React.Fragment key={i}>
+              <span className="inline-flex items-center gap-2">
+                <EditableIcon id={`home.trust.${i}.icon`} as={LUCIDE[t.icon]} iconClass="h-4 w-4" colorClass="text-accent" />
+                <EditableText id={`home.trust.${i}`} as="span" className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">{t.label}</EditableText>
+              </span>
+              {i < TRUST.length - 1 && (
+                <ArrowRight className="h-4 w-4 text-accent/70 arrow-move" aria-hidden="true" />
+              )}
+            </React.Fragment>
           ))}
         </div>
       </div>

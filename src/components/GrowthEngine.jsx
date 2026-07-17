@@ -59,14 +59,14 @@ export default function GrowthEngine() {
   return (
     <div
       className="relative mx-auto w-full max-w-[520px]"
-      style={{ background: 'linear-gradient(160deg, #0b1c24 0%, #162d38 100%)', borderRadius: '2rem', padding: '1.5rem' }}
+      style={{ borderRadius: '2rem', padding: '1.5rem' }}
     >
-      {/* Faint brand logo watermark behind the wheel */}
+      {/* Brand logo watermark behind the wheel */}
       <img
         src={BRAND_LOGO}
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-0 mx-auto h-full w-full object-contain p-8 opacity-[0.06] mix-blend-screen"
+        className="pointer-events-none absolute inset-0 z-0 mx-auto h-full w-full object-contain p-1 opacity-15"
       />
       {/* Circular flywheel (sm+) */}
       <div className="relative hidden aspect-square w-full sm:block">

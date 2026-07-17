@@ -34,7 +34,7 @@ const DISTRIBUTION = [
   { name: 'YouTube', note: 'Channel', brand: 'YouTube' },
   { name: 'Facebook', note: 'Posts, DMs', brand: 'Facebook' },
   { name: 'X', note: 'Updates', brand: 'X' },
-  { name: 'Paid Media', note: 'Paid ads', brand: 'Meta' },
+  { name: 'Paid Media', note: 'Paid ads', icon: 'Megaphone' },
 ];
 
 const OPTIMIZATION = [
@@ -183,8 +183,8 @@ export default function Home() {
                 <div className="mt-3 grid gap-3 sm:grid-cols-3">
                   {DISTRIBUTION.map((p, i) => (
                     <div key={i} className="flex items-center gap-3 rounded-xl border border-border bg-background/60 p-3">
-                      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-card ring-1 ring-border">
-                        <EditableIcon id={`home.svc.social.dist.${i}.icon`} markup={BRAND_MARKUP[p.brand]} iconClass="h-5 w-5" />
+                      <span className="dist-icon grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-card ring-1 ring-border">
+                        <EditableIcon id={`home.svc.social.dist.${i}.icon`} markup={p.brand ? BRAND_MARKUP[p.brand] : undefined} as={p.icon ? LUCIDE[p.icon] : undefined} iconClass="h-5 w-5" colorClass={p.icon ? 'text-accent' : undefined} />
                       </span>
                       <div className="min-w-0">
                         <EditableText id={`home.svc.social.dist.${i}.n`} as="strong" className="block text-sm font-semibold text-primary" block>{p.name}</EditableText>
@@ -198,7 +198,7 @@ export default function Home() {
                 <div className="mt-3 grid gap-3">
                   {OPTIMIZATION.map((p, i) => (
                     <div key={i} className="flex items-center gap-3 rounded-xl border border-border bg-background/60 p-3">
-                      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-card ring-1 ring-border">
+                      <span className="dist-icon grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-card ring-1 ring-border">
                         <EditableIcon id={`home.svc.social.opt.${i}.icon`} markup={BRAND_MARKUP[p.brand]} iconClass="h-5 w-5" />
                       </span>
                       <div className="min-w-0">

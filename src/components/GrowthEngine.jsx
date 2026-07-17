@@ -23,18 +23,18 @@ function NodeCard({ node, idx }) {
   return (
     <Movable
       id={`ge.node.${idx}`}
-      className="absolute w-[140px]"
+      className="absolute w-[154px]"
       style={{ left: `${node.x}%`, top: `${node.y}%`, transform: 'translate(-50%, -50%)' }}
     >
-      <div className="flex h-[132px] w-[140px] flex-col items-center justify-center gap-1.5 rounded-2xl border border-border bg-card/95 px-3 py-3 text-center shadow-[0_12px_32px_-14px_rgba(0,0,0,0.25)] backdrop-blur-sm">
+      <div className="flex h-[156px] w-[154px] flex-col items-center justify-center gap-2 rounded-2xl border border-border bg-card/95 px-3 py-3.5 text-center shadow-[0_12px_32px_-14px_rgba(0,0,0,0.25)] backdrop-blur-sm">
         <span className="text-[9px] font-bold uppercase tracking-[0.18em] text-accent">Step {node.n}</span>
         <span className="grid h-11 w-11 place-items-center rounded-xl bg-primary text-primary-foreground">
           <EditableIcon id={`ge.node.${idx}.icon`} as={LUCIDE[node.icon]} iconClass="h-5 w-5" />
         </span>
-        <EditableText id={`ge.node.${idx}.title`} as="strong" className="line-clamp-2 font-heading text-xs font-bold leading-tight text-primary" block>
+        <EditableText id={`ge.node.${idx}.title`} as="strong" className="font-heading text-xs font-bold leading-tight text-primary" block>
           {node.title}
         </EditableText>
-        <EditableText id={`ge.node.${idx}.cap`} as="span" className="line-clamp-2 text-[10px] leading-snug text-muted-foreground" block>
+        <EditableText id={`ge.node.${idx}.cap`} as="span" className="text-[11px] leading-snug text-muted-foreground" block>
           {node.caption}
         </EditableText>
       </div>
@@ -44,7 +44,7 @@ function NodeCard({ node, idx }) {
 
 export default function GrowthEngine() {
   return (
-    <div className="relative mx-auto w-full max-w-[480px]">
+    <div className="relative mx-auto w-full max-w-[500px]">
       {/* Circular flywheel (sm+) */}
       <div className="relative hidden aspect-square w-full sm:block">
         {/* Soft center glow */}

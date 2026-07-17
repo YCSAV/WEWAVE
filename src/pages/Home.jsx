@@ -410,7 +410,7 @@ export default function Home() {
                 Tell us where your brand needs more attention, stronger storytelling, better social management, or more customer action.
               </EditableText>
               <div className="mt-8 flex flex-wrap justify-center gap-3">
-                <a href="mailto:hello@wewavesocials.com?subject=Content%20Project%20Inquiry" className="btn-gold">
+                <a href="mailto:sliceofhawaii@email.com?subject=Content%20Project%20Inquiry" className="btn-gold">
                   <EditableText id="home.cta.btn1" as="span">Start a conversation</EditableText> <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <Link to="/ecosystem" className="btn-ghost border-background/20 bg-background/10 text-background hover:border-background/40">

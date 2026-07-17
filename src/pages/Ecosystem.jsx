@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, Sprout, Radio, Gauge, Play, Smartphone, Tv } from 'lucide-react';
 import { EditableText, Movable } from '@/components/edit/Editable';
+import { BRAND_MARKUP } from '@/components/BrandIcons';
 
 const PHASES = [
   { no: '01', icon: Sprout, devices: [Smartphone], title: 'Growth', desc: 'Build a consistent vertical presence through premium short-form content and managed social distribution.', items: ['2–4 short-form videos per month', 'Instagram + TikTok distribution', 'Meta advertising support', 'One half-day shoot per month'] },
@@ -68,6 +69,17 @@ export default function Ecosystem() {
                         </li>
                       ))}
                     </ul>
+                    {i === 0 && (
+                      <div className="relative mt-6 flex items-center gap-2">
+                        <span className="dist-icon" dangerouslySetInnerHTML={{ __html: BRAND_MARKUP.Instagram }} />
+                        <span className="dist-icon" dangerouslySetInnerHTML={{ __html: BRAND_MARKUP.TikTok }} />
+                      </div>
+                    )}
+                    {i === 1 && (
+                      <div className="relative mt-6 flex items-center gap-2">
+                        <span className="dist-icon" dangerouslySetInnerHTML={{ __html: BRAND_MARKUP.YouTube }} />
+                      </div>
+                    )}
                   </article>
                 </Movable>
               );

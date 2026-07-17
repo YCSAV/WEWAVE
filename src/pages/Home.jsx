@@ -15,17 +15,17 @@ const TRUST = [
   { icon: 'BarChart3', label: 'Optimization' },
 ];
 
-const PRODUCTION_STEPS = [
-  { icon: 'Lightbulb', title: 'Strategy', desc: 'We plan every project around your brand, audience, and goals.' },
-  { icon: 'Camera', title: 'Production', desc: 'Video and audio production with cinematic quality.' },
-  { icon: 'SlidersHorizontal', title: 'Editing', desc: 'Professional editing, color, audio, and polished delivery.' },
+const PLAN_STEPS = [
+  { icon: 'PenTool', title: 'Creative Direction', desc: 'Concepts shaped around your brand and goals.' },
+  { icon: 'MessageCircle', title: 'Customer Feedback', desc: 'Audience insights guide the direction.' },
+  { icon: 'Layers', title: 'Storyboarding', desc: 'Every shot planned before we roll.' },
 ];
 
-const WHERE_IT_LIVES = [
-  { icon: 'MessageCircle', name: 'Social Feeds', note: 'Reels, Stories, Shorts' },
-  { icon: 'Play', name: 'YouTube', note: 'Episodes & series' },
-  { icon: 'Globe', name: 'Website', note: 'Hero & landing video' },
-  { icon: 'Megaphone', name: 'Paid Ads', note: 'Cut-downs for campaigns' },
+const PROD_STEPS = [
+  { icon: 'Camera', title: 'Filming', desc: 'Cinematic on-location capture.' },
+  { icon: 'SlidersHorizontal', title: 'Editing', desc: 'Color, sound & final polish.' },
+  { icon: 'Users', title: 'Feedback', desc: 'Revisions from your review.' },
+  { icon: 'Rocket', title: 'Delivery', desc: 'Assets for every platform.' },
 ];
 
 const DISTRIBUTION = [
@@ -128,29 +128,28 @@ export default function Home() {
                   From fast-moving vertical content to cinematic long-form storytelling, we create media that makes the brand look as strong online as it is in real life.
                 </EditableText>
 
-                <div className="mt-7 grid gap-4 sm:grid-cols-3">
-                  {PRODUCTION_STEPS.map((s, i) => (
+                <EditableText id="home.svc.video.plan.lbl" as="span" className="mt-7 text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground" block>Planning</EditableText>
+                <div className="mt-3 grid gap-4 sm:grid-cols-3">
+                  {PLAN_STEPS.map((s, i) => (
                     <div key={i} className="rounded-2xl border border-border bg-background/60 p-4">
                       <span className="grid h-10 w-10 place-items-center rounded-xl bg-accent/10 text-accent">
-                        <EditableIcon id={`home.svc.video.step.${i}.icon`} as={LUCIDE[s.icon]} iconClass="h-5 w-5" />
+                        <EditableIcon id={`home.svc.video.plan.${i}.icon`} as={LUCIDE[s.icon]} iconClass="h-5 w-5" />
                       </span>
-                      <EditableText id={`home.svc.video.step.${i}.t`} as="strong" className="mt-3 block text-sm font-bold text-primary" block>{s.title}</EditableText>
-                      <EditableText id={`home.svc.video.step.${i}.d`} as="p" className="mt-1 text-xs leading-snug text-muted-foreground" block>{s.desc}</EditableText>
+                      <EditableText id={`home.svc.video.plan.${i}.t`} as="strong" className="mt-3 block text-sm font-bold text-primary" block>{s.title}</EditableText>
+                      <EditableText id={`home.svc.video.plan.${i}.d`} as="p" className="mt-1 text-xs leading-snug text-muted-foreground" block>{s.desc}</EditableText>
                     </div>
                   ))}
                 </div>
 
-                <EditableText id="home.svc.video.where.lbl" as="span" className="mt-7 text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground" block>Where It Lives</EditableText>
-                <div className="mt-3 grid gap-3 sm:grid-cols-2">
-                  {WHERE_IT_LIVES.map((p, i) => (
-                    <div key={i} className="flex items-center gap-3 rounded-xl border border-border bg-background/60 p-3">
-                      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-accent/10 text-accent">
-                        <EditableIcon id={`home.svc.video.where.${i}.icon`} as={LUCIDE[p.icon]} iconClass="h-5 w-5" />
+                <EditableText id="home.svc.video.prod.lbl" as="span" className="mt-6 text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground" block>Production</EditableText>
+                <div className="mt-3 grid gap-4 sm:grid-cols-4">
+                  {PROD_STEPS.map((s, i) => (
+                    <div key={i} className="rounded-2xl border border-border bg-background/60 p-4">
+                      <span className="grid h-10 w-10 place-items-center rounded-xl bg-accent/10 text-accent">
+                        <EditableIcon id={`home.svc.video.prod.${i}.icon`} as={LUCIDE[s.icon]} iconClass="h-5 w-5" />
                       </span>
-                      <div className="min-w-0">
-                        <EditableText id={`home.svc.video.where.${i}.n`} as="strong" className="block text-sm font-semibold text-primary" block>{p.name}</EditableText>
-                        <EditableText id={`home.svc.video.where.${i}.note`} as="span" className="text-xs text-muted-foreground" block>{p.note}</EditableText>
-                      </div>
+                      <EditableText id={`home.svc.video.prod.${i}.t`} as="strong" className="mt-3 block text-sm font-bold text-primary" block>{s.title}</EditableText>
+                      <EditableText id={`home.svc.video.prod.${i}.d`} as="p" className="mt-1 text-xs leading-snug text-muted-foreground" block>{s.desc}</EditableText>
                     </div>
                   ))}
                 </div>

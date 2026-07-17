@@ -243,7 +243,7 @@ export default function Home() {
                 </div>
 
                 <div className="mt-auto pt-6 flex flex-wrap gap-2">
-                  {['Publishing', 'Scheduling', 'Community management', 'Paid distribution', 'Analytics'].map((t, i) => (
+                  {['Publishing', 'Scheduling', 'Community management', 'Paid distribution', 'Analytics', 'Ad campaigns'].map((t, i) => (
                     <EditableText key={i} id={`home.svc.social.tag.${i}`} as="span" className="rounded-full border border-border bg-background px-3 py-1.5 text-xs font-medium text-muted-foreground">{t}</EditableText>
                   ))}
                 </div>

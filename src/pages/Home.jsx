@@ -16,24 +16,25 @@ const TRUST = [
 ];
 
 const PLAN_STEPS = [
-  { icon: 'PenTool', title: 'Creative Direction', desc: 'Concepts around your brand' },
-  { icon: 'MessageCircle', title: 'Customer Feedback', desc: 'Insights guide direction' },
-  { icon: 'Layers', title: 'Storyboarding', desc: 'Planned before we roll' },
+  { icon: 'PenTool', title: 'Creative Direction', desc: 'Concepts shaped around your brand.' },
+  { icon: 'MessageCircle', title: 'Customer Feedback', desc: 'Insights from your audience.' },
+  { icon: 'Layers', title: 'Storyboarding', desc: 'Shots planned before we roll.' },
 ];
 
 const PROD_STEPS = [
-  { icon: 'Camera', title: 'Filming', desc: 'Cinematic on-location capture.' },
-  { icon: 'SlidersHorizontal', title: 'Editing', desc: 'Color, sound & final polish.' },
-  { icon: 'Users', title: 'Feedback', desc: 'Revisions from your review.' },
+  { icon: 'Camera', title: 'Filming', desc: 'On-location capture.' },
+  { icon: 'SlidersHorizontal', title: 'Editing', desc: 'Color, sound & polish.' },
+  { icon: 'Users', title: 'Feedback', desc: 'Revisions from review.' },
   { icon: 'Rocket', title: 'Delivery', desc: 'Assets for every platform.' },
 ];
 
 const DISTRIBUTION = [
-  { name: 'Instagram', note: 'Feed, Stories, Reels', brand: 'Instagram' },
-  { name: 'TikTok', note: 'Short-form content', brand: 'TikTok' },
-  { name: 'YouTube', note: 'Channel management', brand: 'YouTube' },
-  { name: 'Facebook', note: 'Posts, engagement', brand: 'Facebook' },
-  { name: 'X', note: 'Updates, engagement', brand: 'X' },
+  { name: 'Instagram', note: 'Feed, Reels', brand: 'Instagram' },
+  { name: 'TikTok', note: 'Short-form', brand: 'TikTok' },
+  { name: 'YouTube', note: 'Channel', brand: 'YouTube' },
+  { name: 'Facebook', note: 'Posts, DMs', brand: 'Facebook' },
+  { name: 'X', note: 'Updates', brand: 'X' },
+  { name: 'Paid Media', note: 'Paid ads', brand: 'Meta' },
 ];
 
 const OPTIMIZATION = [
@@ -129,28 +130,27 @@ export default function Home() {
                 </EditableText>
 
                 <EditableText id="home.svc.video.plan.lbl" as="span" className="mt-7 text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground" block>Planning</EditableText>
-                <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                <div className="mt-3 grid gap-4 sm:grid-cols-3">
                   {PLAN_STEPS.map((s, i) => (
-                    <div key={i} className="flex items-center gap-3 rounded-xl border border-border bg-background/60 p-3">
-                      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-accent/10 text-accent">
+                    <div key={i} className="rounded-2xl border border-border bg-background/60 p-4">
+                      <span className="grid h-10 w-10 place-items-center rounded-xl bg-accent/10 text-accent">
                         <EditableIcon id={`home.svc.video.plan.${i}.icon`} as={LUCIDE[s.icon]} iconClass="h-5 w-5" />
                       </span>
-                      <div className="min-w-0">
-                        <EditableText id={`home.svc.video.plan.${i}.t`} as="strong" className="block text-sm font-semibold text-primary" block>{s.title}</EditableText>
-                        <EditableText id={`home.svc.video.plan.${i}.d`} as="span" className="text-xs text-muted-foreground" block>{s.desc}</EditableText>
-                      </div>
+                      <EditableText id={`home.svc.video.plan.${i}.t`} as="strong" className="mt-3 block text-sm font-bold text-primary" block>{s.title}</EditableText>
+                      <EditableText id={`home.svc.video.plan.${i}.d`} as="p" className="mt-1 text-xs leading-snug text-muted-foreground" block>{s.desc}</EditableText>
                     </div>
                   ))}
                 </div>
 
                 <EditableText id="home.svc.video.prod.lbl" as="span" className="mt-6 text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground" block>Production</EditableText>
-                <div className="mt-3 grid gap-3 sm:grid-cols-4">
+                <div className="mt-3 grid gap-4 sm:grid-cols-4">
                   {PROD_STEPS.map((s, i) => (
-                    <div key={i} className="flex items-center gap-2.5 rounded-xl border border-border bg-background/60 p-3">
-                      <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-accent/10 text-accent">
-                        <EditableIcon id={`home.svc.video.prod.${i}.icon`} as={LUCIDE[s.icon]} iconClass="h-4 w-4" />
+                    <div key={i} className="rounded-2xl border border-border bg-background/60 p-4">
+                      <span className="grid h-10 w-10 place-items-center rounded-xl bg-accent/10 text-accent">
+                        <EditableIcon id={`home.svc.video.prod.${i}.icon`} as={LUCIDE[s.icon]} iconClass="h-5 w-5" />
                       </span>
-                      <EditableText id={`home.svc.video.prod.${i}.t`} as="strong" className="text-xs font-semibold leading-tight text-primary" block>{s.title}</EditableText>
+                      <EditableText id={`home.svc.video.prod.${i}.t`} as="strong" className="mt-3 block text-sm font-bold text-primary" block>{s.title}</EditableText>
+                      <EditableText id={`home.svc.video.prod.${i}.d`} as="p" className="mt-1 text-xs leading-snug text-muted-foreground" block>{s.desc}</EditableText>
                     </div>
                   ))}
                 </div>
@@ -180,7 +180,7 @@ export default function Home() {
                 </EditableText>
 
                 <EditableText id="home.svc.social.lbl1" as="span" className="mt-7 text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground" block>Content Distribution</EditableText>
-                <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                <div className="mt-3 grid gap-3 sm:grid-cols-3">
                   {DISTRIBUTION.map((p, i) => (
                     <div key={i} className="flex items-center gap-3 rounded-xl border border-border bg-background/60 p-3">
                       <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-card ring-1 ring-border">
@@ -195,7 +195,7 @@ export default function Home() {
                 </div>
 
                 <EditableText id="home.svc.social.lbl2" as="span" className="mt-6 text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground" block>Performance Optimization</EditableText>
-                <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                <div className="mt-3 grid gap-3">
                   {OPTIMIZATION.map((p, i) => (
                     <div key={i} className="flex items-center gap-3 rounded-xl border border-border bg-background/60 p-3">
                       <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-card ring-1 ring-border">

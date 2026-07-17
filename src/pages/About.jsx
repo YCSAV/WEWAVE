@@ -40,7 +40,7 @@ export default function About() {
             <div className="mt-8 grid grid-cols-4 gap-2">
               {[1, 2, 3, 4].map((i) =>
               <div key={i} className="aspect-square overflow-hidden rounded-xl ring-1 ring-border">
-                  <img src={SLICE_LOGO} alt="" className="h-full w-full object-cover opacity-90 hidden" />
+                  
                 </div>
               )}
             </div>

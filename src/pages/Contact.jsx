@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, MapPin, Layers, Mail } from 'lucide-react';
+import { ArrowUpRight, MapPin, Layers, Mail, Phone } from 'lucide-react';
 import { EditableText } from '@/components/edit/Editable';
 
 export default function Contact() {
@@ -55,8 +55,16 @@ export default function Contact() {
                 <EditableText id="contact.info.email.lbl" as="small" className="mt-4 block text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground" block>Email</EditableText>
                 <a href="mailto:hello@wewavesocials.com" className="mt-1 block font-heading text-lg font-bold text-primary hover:text-accent">hello@wewavesocials.com</a>
               </div>
+              <div className="rounded-3xl border border-border bg-card p-7">
+                <span className="grid h-11 w-11 place-items-center rounded-2xl bg-primary text-primary-foreground"><Phone className="h-5 w-5" /></span>
+                <EditableText id="contact.info.phone.lbl" as="small" className="mt-4 block text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground" block>Phone</EditableText>
+                <a href="tel:+16179810000" className="mt-1 block font-heading text-lg font-bold text-primary hover:text-accent">617-981-0000</a>
+              </div>
             </div>
           </div>
+          <p className="mt-8 text-center text-sm text-muted-foreground">
+            <EditableText id="contact.footnote" as="span">Our phone number shows a 617 area code, but we proudly serve businesses across the 808 — Honolulu and all of Hawaiʻi.</EditableText>
+          </p>
         </div>
       </section>
     </>

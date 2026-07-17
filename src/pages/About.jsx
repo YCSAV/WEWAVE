@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, Users, Camera, Sparkles } from 'lucide-react';
+import { ArrowUpRight, Users, Camera, Sparkles, Phone } from 'lucide-react';
 import { EditableText } from '@/components/edit/Editable';
 
 const SLICE_LOGO = 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/040f619ea_slice-logo-watermark.png';
@@ -99,6 +99,18 @@ export default function About() {
               <EditableText id="about.cta.p" as="p" className="mt-1 text-sm text-muted-foreground" block>Tell us about your brand — we’ll show you where content and social can move the needle.</EditableText>
             </div>
             <Link to="/contact" className="btn-gold shrink-0">Start a conversation <ArrowUpRight className="h-4 w-4" /></Link>
+          </div>
+          <div className="mt-8 flex flex-col items-center justify-between gap-6 rounded-3xl border border-border bg-secondary/40 px-6 py-8 text-center sm:flex-row sm:text-left">
+            <div className="flex items-center gap-4">
+              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-accent text-accent-foreground"><Phone className="h-6 w-6" /></span>
+              <div>
+                <EditableText id="about.phone.lbl" as="small" className="block text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground" block>Call us</EditableText>
+                <a href="tel:+16179810000" className="font-heading text-xl font-extrabold tracking-tight text-primary hover:text-accent">617-981-0000</a>
+              </div>
+            </div>
+            <p className="max-w-md text-sm text-muted-foreground">
+              <EditableText id="about.phone.note" as="span">Our number shows a 617 area code, but we proudly serve businesses across the 808 — Honolulu and all of Hawaiʻi.</EditableText>
+            </p>
           </div>
         </div>
       </section>

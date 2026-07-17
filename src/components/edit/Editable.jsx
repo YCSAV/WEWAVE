@@ -20,7 +20,7 @@ export const LUCIDE = {
 };
 
 /* Editable text — contentEditable in edit mode, persisted to localStorage by id */
-export function EditableText({ id, as: Tag = 'span', className, children, block }) {
+export function EditableText({ id, as: Tag = 'span', className, style, children, block }) {
   const { editMode, store, setText, setSelectedText } = useEdit();
   const saved = store.text?.[id];
   const ref = useRef(null);
@@ -32,6 +32,7 @@ export function EditableText({ id, as: Tag = 'span', className, children, block 
   return (
     <Tag
       ref={ref}
+      style={style}
       className={cn(className, editMode && 'edit-outline', block && 'block')}
       contentEditable={editMode}
       suppressContentEditableWarning

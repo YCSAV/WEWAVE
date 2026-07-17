@@ -73,11 +73,13 @@ export default function Ecosystem() {
                       <div className="relative mt-6 flex items-center gap-2">
                         <span className="dist-icon" dangerouslySetInnerHTML={{ __html: BRAND_MARKUP.Instagram }} />
                         <span className="dist-icon" dangerouslySetInnerHTML={{ __html: BRAND_MARKUP.TikTok }} />
+                        <span className="dist-icon" dangerouslySetInnerHTML={{ __html: BRAND_MARKUP.Meta }} />
                       </div>
                     )}
                     {i === 1 && (
                       <div className="relative mt-6 flex items-center gap-2">
                         <span className="dist-icon" dangerouslySetInnerHTML={{ __html: BRAND_MARKUP.YouTube }} />
+                        <span className="dist-icon" dangerouslySetInnerHTML={{ __html: BRAND_MARKUP.Google }} />
                       </div>
                     )}
                   </article>

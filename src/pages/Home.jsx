@@ -54,7 +54,7 @@ const TEAM = [
 
 const SVC_VIDEO_IMG = 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/ff95a23da_generated_image.png';
 const SVC_SOCIAL_IMG = 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/dd1cc73e6_generated_image.png';
-const ABOUT_IMG = 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/ff95a23da_generated_image.png';
+const ABOUT_IMG = 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/58acc856a_generated_image.png';
 const STATS_BG = 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/58acc856a_generated_image.png';
 
 const STATS = [
@@ -304,18 +304,20 @@ export default function Home() {
       </section>
 
       {/* Stats band */}
-      <section className="relative overflow-hidden border-y border-border">
-        <img src={STATS_BG} alt="" className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.12]" loading="lazy" />
-        <div className="absolute inset-0 bg-primary/92" />
-        <div className="relative container-wide py-14 sm:py-16">
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <section className="border-y border-border bg-primary">
+        <div className="container-wide py-6 sm:py-7">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-background/15">
             {STATS.map((s, i) => (
-              <div key={i} className="text-center sm:text-left">
-                <EditableIcon id={`home.stat.${i}.icon`} as={LUCIDE[s.icon]} iconClass="h-6 w-6" colorClass="text-accent" />
-                <div className="mt-3 font-heading text-4xl font-extrabold tracking-tight text-background sm:text-5xl">
-                  <EditableText id={`home.stat.${i}.v`} as="span">{s.value}</EditableText>
+              <div key={i} className="flex items-center gap-3 lg:px-5 lg:first:pl-0 lg:last:pr-0">
+                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-accent/15 text-accent">
+                  <EditableIcon id={`home.stat.${i}.icon`} as={LUCIDE[s.icon]} iconClass="h-5 w-5" />
+                </span>
+                <div className="min-w-0">
+                  <div className="font-heading text-2xl font-extrabold leading-none text-background">
+                    <EditableText id={`home.stat.${i}.v`} as="span">{s.value}</EditableText>
+                  </div>
+                  <EditableText id={`home.stat.${i}.l`} as="p" className="mt-1 text-xs leading-snug text-background/70" block>{s.label}</EditableText>
                 </div>
-                <EditableText id={`home.stat.${i}.l`} as="p" className="mt-1 text-sm text-background/70" block>{s.label}</EditableText>
               </div>
             ))}
           </div>

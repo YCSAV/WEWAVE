@@ -4,6 +4,7 @@ import {
   Clapperboard, Share2, Lightbulb, Camera, SlidersHorizontal, ArrowUpRight, Sparkles, Play,
 } from 'lucide-react';
 import GrowthEngine from '@/components/GrowthEngine';
+import BackgroundIcons from '@/components/BackgroundIcons';
 import { EditableText, EditableIcon, Movable, LUCIDE } from '@/components/edit/Editable';
 import { BRAND_MARKUP } from '@/components/BrandIcons';
 
@@ -58,6 +59,11 @@ export default function Home() {
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[520px] rounded-full bg-accent/10 blur-3xl" />
+        <BackgroundIcons items={[
+          { icon: 'Clapperboard', className: 'left-[3%] top-[22%] h-24 w-24', float: 'bg-float' },
+          { icon: 'Users', className: 'left-[7%] bottom-[14%] h-20 w-20', float: 'bg-float-slow' },
+          { icon: 'Camera', className: 'right-[2%] top-[64%] h-20 w-20', float: 'bg-float' },
+        ]} />
         <div className="container-wide grid items-center gap-12 py-14 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8">
           <div>
             <span className="eyebrow"><Sparkles className="h-3.5 w-3.5" />
@@ -98,7 +104,13 @@ export default function Home() {
       </div>
 
       {/* Services */}
-      <section id="services" className="py-20 sm:py-28">
+      <section id="services" className="relative overflow-hidden py-20 sm:py-28">
+        <BackgroundIcons items={[
+          { icon: 'Camera', className: 'left-[3%] top-[12%] h-24 w-24', float: 'bg-float-slow' },
+          { icon: 'Share2', className: 'right-[4%] top-[28%] h-24 w-24', float: 'bg-float' },
+          { icon: 'BarChart3', className: 'left-[7%] bottom-[12%] h-20 w-20', float: 'bg-float' },
+          { icon: 'Megaphone', className: 'right-[3%] bottom-[16%] h-20 w-20', float: 'bg-float-slow' },
+        ]} />
         <div className="container-wide">
           <div className="grid gap-8 border-b border-border pb-12 md:grid-cols-[1fr_1fr] md:items-end">
             <div>
@@ -182,8 +194,8 @@ export default function Home() {
                 <EditableText id="home.svc.social.lbl1" as="span" className="mt-7 text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground" block>Content Distribution</EditableText>
                 <div className="mt-3 grid gap-3 sm:grid-cols-3">
                   {DISTRIBUTION.map((p, i) => (
-                    <div key={i} className="flex h-[74px] items-center gap-2 overflow-hidden rounded-xl border border-border bg-background/60 p-3">
-                      <span className="dist-icon grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-card ring-1 ring-border">
+                    <div key={i} className="group flex h-[74px] items-center gap-2 overflow-hidden rounded-xl border border-border bg-background/60 p-3 transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-sm">
+                      <span className="dist-icon grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-card ring-1 ring-border transition-colors group-hover:bg-accent/5">
                         <EditableIcon id={`home.svc.social.dist.${i}.icon`} markup={p.brand ? BRAND_MARKUP[p.brand] : undefined} as={p.icon ? LUCIDE[p.icon] : undefined} iconClass="h-5 w-5" colorClass={p.icon ? 'text-accent' : undefined} />
                       </span>
                       <div className="min-w-0 flex-1">
@@ -197,8 +209,8 @@ export default function Home() {
                 <EditableText id="home.svc.social.lbl2" as="span" className="mt-6 text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground" block>Performance Optimization</EditableText>
                 <div className="mt-3 grid gap-3">
                   {OPTIMIZATION.map((p, i) => (
-                    <div key={i} className="flex items-center gap-3 rounded-xl border border-border bg-background/60 p-3">
-                      <span className="dist-icon grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-card ring-1 ring-border">
+                    <div key={i} className="group flex items-center gap-3 rounded-xl border border-border bg-background/60 p-3 transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-sm">
+                      <span className="dist-icon grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-card ring-1 ring-border transition-colors group-hover:bg-accent/5">
                         <EditableIcon id={`home.svc.social.opt.${i}.icon`} markup={BRAND_MARKUP[p.brand]} iconClass="h-5 w-5" />
                       </span>
                       <div className="min-w-0">
@@ -238,7 +250,11 @@ export default function Home() {
       </section>
 
       {/* Featured Work */}
-      <section className="border-y border-border bg-secondary/30 py-20 sm:py-28">
+      <section className="relative overflow-hidden border-y border-border bg-secondary/30 py-20 sm:py-28">
+        <BackgroundIcons items={[
+          { icon: 'Play', className: 'left-[3%] top-[22%] h-24 w-24', float: 'bg-float' },
+          { icon: 'Clapperboard', className: 'right-[4%] bottom-[22%] h-24 w-24', float: 'bg-float-slow' },
+        ]} />
         <div className="container-wide">
           <div className="grid gap-8 border-b border-border pb-12 md:grid-cols-[1fr_1fr] md:items-end">
             <div>
@@ -277,7 +293,11 @@ export default function Home() {
       </section>
 
       {/* About teaser */}
-      <section id="about" className="py-20 sm:py-28">
+      <section id="about" className="relative overflow-hidden py-20 sm:py-28">
+        <BackgroundIcons items={[
+          { icon: 'Users', className: 'left-[3%] top-[24%] h-24 w-24', float: 'bg-float' },
+          { icon: 'Camera', className: 'right-[5%] bottom-[18%] h-20 w-20', float: 'bg-float-slow' },
+        ]} />
         <div className="container-wide grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <div className="relative overflow-hidden rounded-3xl border border-border bg-secondary/50 p-8 sm:p-10">
             <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-accent/15 blur-2xl" />

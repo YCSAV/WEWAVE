@@ -106,7 +106,12 @@
   .btn-ghost {
     @apply inline-flex items-center justify-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold text-primary transition-all hover:border-primary/40 hover:-translate-y-0.5;
   }
-  .dist-icon svg { width: 20px; height: 20px; display: block; }
+  .dist-icon svg { width: 22px; height: 22px; display: block; }
+
+@keyframes bg-float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+.bg-float { animation: bg-float 8s ease-in-out infinite; }
+@keyframes bg-float-slow { 0%,100%{transform:translateY(0)} 50%{transform:translateY(10px)} }
+.bg-float-slow { animation: bg-float-slow 11s ease-in-out infinite; }
 }
 
 @keyframes flow-dash {

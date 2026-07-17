@@ -7,7 +7,13 @@ import GrowthEngine from '@/components/GrowthEngine';
 import { EditableText, EditableIcon, Movable, LUCIDE } from '@/components/edit/Editable';
 import { BRAND_MARKUP } from '@/components/BrandIcons';
 
-const TRUST = ['Strategy', 'Production', 'Social Management', 'Distribution', 'Optimization'];
+const TRUST = [
+  { icon: 'Target', label: 'Strategy' },
+  { icon: 'Clapperboard', label: 'Production' },
+  { icon: 'Share2', label: 'Social Management' },
+  { icon: 'Radio', label: 'Distribution' },
+  { icon: 'BarChart3', label: 'Optimization' },
+];
 
 const PRODUCTION_STEPS = [
   { icon: 'Lightbulb', title: 'Strategy', desc: 'We plan every project around your brand, audience, and goals.' },
@@ -75,10 +81,10 @@ export default function Home() {
       <div className="border-y border-border bg-secondary/40">
         <div className="container-wide flex flex-wrap items-center justify-center gap-x-8 gap-y-3 py-5 sm:justify-between">
           {TRUST.map((t, i) => (
-            <React.Fragment key={i}>
-              <EditableText id={`home.trust.${i}`} as="span" className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">{t}</EditableText>
-              {i < TRUST.length - 1 && <span className="hidden text-accent/40 sm:inline">•</span>}
-            </React.Fragment>
+            <span key={i} className="inline-flex items-center gap-2">
+              <EditableIcon id={`home.trust.${i}.icon`} as={LUCIDE[t.icon]} iconClass="h-4 w-4" colorClass="text-accent" />
+              <EditableText id={`home.trust.${i}`} as="span" className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">{t.label}</EditableText>
+            </span>
           ))}
         </div>
       </div>
@@ -191,11 +197,20 @@ export default function Home() {
           </div>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3 rounded-2xl border border-border bg-secondary/50 px-6 py-5 text-center text-sm font-medium text-muted-foreground">
-            <EditableText id="home.rel.1" as="span">Production creates the asset</EditableText>
+            <span className="inline-flex items-center gap-2">
+              <EditableIcon id="home.rel.1.icon" as={LUCIDE.Clapperboard} iconClass="h-4 w-4" colorClass="text-accent" />
+              <EditableText id="home.rel.1" as="span">Production creates the asset</EditableText>
+            </span>
             <span className="text-accent">→</span>
-            <EditableText id="home.rel.2" as="span">Distribution creates the audience</EditableText>
+            <span className="inline-flex items-center gap-2">
+              <EditableIcon id="home.rel.2.icon" as={LUCIDE.Share2} iconClass="h-4 w-4" colorClass="text-accent" />
+              <EditableText id="home.rel.2" as="span">Distribution creates the audience</EditableText>
+            </span>
             <span className="text-accent">→</span>
-            <EditableText id="home.rel.3" as="span">Optimization creates growth</EditableText>
+            <span className="inline-flex items-center gap-2">
+              <EditableIcon id="home.rel.3.icon" as={LUCIDE.BarChart3} iconClass="h-4 w-4" colorClass="text-accent" />
+              <EditableText id="home.rel.3" as="span">Optimization creates growth</EditableText>
+            </span>
           </div>
         </div>
       </section>

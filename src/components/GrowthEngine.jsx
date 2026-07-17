@@ -68,7 +68,7 @@ export default function GrowthEngine() {
 
         {/* Center hub */}
         <Movable id="ge.hub" className="absolute left-1/2 top-1/2 w-[132px] -translate-x-1/2 -translate-y-1/2">
-          <div className="flex h-[132px] w-[132px] flex-col items-center justify-center gap-2 rounded-2xl border border-accent/40 bg-card px-4 py-5 text-center shadow-[0_14px_38px_-14px_rgba(0,0,0,0.3)]">
+          <div className="flex h-[132px] w-[132px] flex-col items-center justify-center gap-2 rounded-full border border-accent/40 bg-card px-4 py-5 text-center shadow-[0_14px_38px_-14px_rgba(0,0,0,0.3)]">
             <span className="grid h-12 w-12 place-items-center rounded-xl bg-accent text-accent-foreground">
               <EditableIcon id="ge.hub.icon" markup={DEVICES_MARKUP} iconClass="h-7 w-7" />
             </span>

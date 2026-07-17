@@ -13,6 +13,8 @@ export function EditProvider({ children }) {
   const [editMode, setEditMode] = useState(false);
   const [layoutMode, setLayoutMode] = useState(false);
   const [selectedIcon, setSelectedIcon] = useState(null);
+  const [selectedText, setSelectedText] = useState(null);
+  const [clipboard, setClipboard] = useState(null);
   const [store, setStore] = useState(load);
 
   const persist = (updater) => {
@@ -39,6 +41,27 @@ export function EditProvider({ children }) {
       return { ...p, icons };
     }), []);
 
+  // Copy / paste — works on editable text (edit mode) and icons (layout mode).
+  const copyText = useCallback((id) =>
+    setClipboard({ kind: 'text', value: store.text?.[id] ?? null }), [store.text]);
+
+  const pasteText = useCallback((id) => {
+    if (clipboard?.kind !== 'text') return false;
+    if (clipboard.value == null) return false;
+    setText(id, clipboard.value);
+    return true;
+  }, [clipboard, setText]);
+
+  const copyIcon = useCallback((id) =>
+    setClipboard({ kind: 'icon', value: store.icons?.[id] ?? null }), [store.icons]);
+
+  const pasteIcon = useCallback((id) => {
+    if (clipboard?.kind !== 'icon') return false;
+    if (clipboard.value == null) return false;
+    setIcon(id, clipboard.value);
+    return true;
+  }, [clipboard, setIcon]);
+
   const resetText = useCallback(() =>
     persist(p => ({ ...p, text: {} })), []);
 
@@ -51,14 +74,19 @@ export function EditProvider({ children }) {
     setEditMode(false);
     setLayoutMode(false);
     setSelectedIcon(null);
+    setSelectedText(null);
+    setClipboard(null);
   }, []);
 
   const value = {
     editMode, setEditMode,
     layoutMode, setLayoutMode,
     selectedIcon, setSelectedIcon,
+    selectedText, setSelectedText,
+    clipboard,
     store,
     setText, setPos, setIcon, clearIcon,
+    copyText, pasteText, copyIcon, pasteIcon,
     resetText, resetLayout, resetAll,
   };
 

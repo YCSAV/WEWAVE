@@ -21,7 +21,7 @@ export const LUCIDE = {
 
 /* Editable text — contentEditable in edit mode, persisted to localStorage by id */
 export function EditableText({ id, as: Tag = 'span', className, children, block }) {
-  const { editMode, store, setText } = useEdit();
+  const { editMode, store, setText, setSelectedText } = useEdit();
   const saved = store.text?.[id];
   const ref = useRef(null);
 
@@ -37,6 +37,7 @@ export function EditableText({ id, as: Tag = 'span', className, children, block 
       suppressContentEditableWarning
       spellCheck={false}
       data-edit-id={id}
+      onFocus={() => { if (editMode) setSelectedText(id); }}
       onBlur={(e) => {
         const h = e.currentTarget.innerHTML;
         if (h !== saved) setText(id, h);
@@ -91,7 +92,7 @@ export function Movable({ id, className, style, children }) {
   );
 }
 
-/* Editable icon — default lucide or markup; swappable via picker/upload */
+/* Editable icon — default lucide or markup; swappable via picker/upload, copy/paste */
 export function EditableIcon({ id, as, markup, className, iconClass = 'h-5 w-5', colorClass }) {
   const { layoutMode, store, setSelectedIcon, selectedIcon } = useEdit();
   const override = store.icons?.[id];

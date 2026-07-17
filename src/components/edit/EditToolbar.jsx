@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 import { useEdit } from './EditProvider';
 import { LUCIDE } from './Editable';
 import { BRAND_MARKUP, BRAND_NAMES, DEVICES_MARKUP } from '@/components/BrandIcons';
-import { Pencil, Move, ImagePlus, RotateCcw, X, Upload, Check } from 'lucide-react';
+import { Pencil, Move, ImagePlus, RotateCcw, X, Upload, Copy, ClipboardPaste } from 'lucide-react';
 
 const DEVICES_KEY = 'Devices';
 
@@ -98,7 +98,11 @@ function IconPickerModal({ onClose }) {
 }
 
 export default function EditToolbar() {
-  const { editMode, setEditMode, layoutMode, setLayoutMode, selectedIcon, setSelectedIcon, resetAll } = useEdit();
+  const {
+    editMode, setEditMode, layoutMode, setLayoutMode,
+    selectedIcon, setSelectedIcon, selectedText, setSelectedText,
+    clipboard, copyText, pasteText, copyIcon, pasteIcon, resetAll,
+  } = useEdit();
   const [picker, setPicker] = useState(false);
   const [flash, setFlash] = useState('');
 
@@ -110,25 +114,71 @@ export default function EditToolbar() {
     setPicker(true);
   };
 
+  const onCopyText = () => {
+    if (!selectedText) { hint('Click text to select'); return; }
+    copyText(selectedText);
+    hint('Text copied');
+  };
+  const onPasteText = () => {
+    if (!selectedText) { hint('Click text to select'); return; }
+    if (clipboard?.kind !== 'text') { hint('Copy text first'); return; }
+    pasteText(selectedText);
+    hint('Text pasted');
+  };
+
+  const onCopyIcon = () => {
+    if (!selectedIcon) { hint('Click an icon to select'); return; }
+    copyIcon(selectedIcon);
+    hint('Icon copied');
+  };
+  const onPasteIcon = () => {
+    if (!selectedIcon) { hint('Click an icon to select'); return; }
+    if (clipboard?.kind !== 'icon') { hint('Copy an icon first'); return; }
+    pasteIcon(selectedIcon);
+    hint('Icon pasted');
+  };
+
+  const btn = 'flex items-center gap-1.5 rounded-full px-3.5 py-2 text-xs font-semibold transition';
+
   return (
     <>
       <div className="fixed bottom-4 left-1/2 z-50 -translate-x-1/2">
         <div className="flex items-center gap-1 rounded-full border border-border bg-card/90 p-1.5 shadow-2xl backdrop-blur-xl">
           <button onClick={() => setEditMode(v => !v)}
-            className={cn('flex items-center gap-1.5 rounded-full px-3.5 py-2 text-xs font-semibold transition', editMode ? 'bg-accent text-accent-foreground' : 'text-primary hover:bg-secondary')}>
+            className={cn(btn, editMode ? 'bg-accent text-accent-foreground' : 'text-primary hover:bg-secondary')}>
             <Pencil className="h-3.5 w-3.5" /> {editMode ? 'Editing' : 'Edit Text'}
           </button>
           <button onClick={() => setLayoutMode(v => !v)}
-            className={cn('flex items-center gap-1.5 rounded-full px-3.5 py-2 text-xs font-semibold transition', layoutMode ? 'bg-accent text-accent-foreground' : 'text-primary hover:bg-secondary')}>
+            className={cn(btn, layoutMode ? 'bg-accent text-accent-foreground' : 'text-primary hover:bg-secondary')}>
             <Move className="h-3.5 w-3.5" /> {layoutMode ? 'Layout' : 'Move'}
           </button>
           <button onClick={onReplace}
-            className="flex items-center gap-1.5 rounded-full px-3.5 py-2 text-xs font-semibold text-primary transition hover:bg-secondary">
+            className={cn(btn, 'text-primary hover:bg-secondary')}>
             <ImagePlus className="h-3.5 w-3.5" /> Icon
           </button>
+
+          {/* Copy / Paste — text (edit mode) or icon (layout mode) */}
+          {(editMode && selectedText) || (layoutMode && selectedIcon) ? (
+            <>
+              <span className="mx-1 h-5 w-px bg-border" />
+              <button
+                onClick={editMode ? onCopyText : onCopyIcon}
+                className={cn(btn, 'text-primary hover:bg-secondary')}
+                title="Copy selected element">
+                <Copy className="h-3.5 w-3.5" /> Copy
+              </button>
+              <button
+                onClick={editMode ? onPasteText : onPasteIcon}
+                className={cn(btn, 'text-primary hover:bg-secondary')}
+                title="Paste into selected element">
+                <ClipboardPaste className="h-3.5 w-3.5" /> Paste
+              </button>
+            </>
+          ) : null}
+
           <span className="mx-1 h-5 w-px bg-border" />
           <button onClick={() => { if (confirm('Reset all text, positions, and icons?')) resetAll(); }}
-            className="flex items-center gap-1.5 rounded-full px-3.5 py-2 text-xs font-semibold text-muted-foreground transition hover:bg-secondary hover:text-destructive">
+            className={cn(btn, 'text-muted-foreground hover:bg-secondary hover:text-destructive')}>
             <RotateCcw className="h-3.5 w-3.5" /> Reset
           </button>
           {flash && <span className="px-2 text-xs font-medium text-accent">{flash}</span>}
@@ -139,6 +189,11 @@ export default function EditToolbar() {
       {layoutMode && !selectedIcon && (
         <div className="pointer-events-none fixed bottom-20 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1.5 text-xs font-medium text-primary-foreground shadow-lg">
           Click an icon to select it, then press Icon
+        </div>
+      )}
+      {editMode && !selectedText && (
+        <div className="pointer-events-none fixed bottom-20 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1.5 text-xs font-medium text-primary-foreground shadow-lg">
+          Click text to edit — use Copy / Paste to duplicate wording between blocks
         </div>
       )}
     </>

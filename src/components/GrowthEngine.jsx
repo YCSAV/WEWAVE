@@ -66,7 +66,7 @@ export default function GrowthEngine() {
         src={BRAND_LOGO}
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-0 mx-auto h-full w-full object-contain opacity-25"
+        className="pointer-events-none absolute -inset-8 z-0 mx-auto h-full w-full object-contain opacity-25"
       />
       {/* Circular flywheel (sm+) */}
       <div className="relative hidden aspect-square w-full sm:block">

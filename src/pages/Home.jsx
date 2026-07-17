@@ -107,7 +107,7 @@ export default function Home() {
                 <EditableText id="home.svc.h2" as="span" block>Content and social media, working together.</EditableText>
               </h2>
             </div>
-            <EditableText id="home.svc.intro" as="p" className="text-muted-foreground md:text-right" block>
+            <EditableText id="home.svc.intro.v2" as="p" className="text-muted-foreground md:text-right" block>
               We’re a one-stop shop where content and social media work together — we create premium media and manage how it’s distributed, published, and optimized across the platforms that shape discovery and customer action.
             </EditableText>
           </div>
@@ -129,7 +129,7 @@ export default function Home() {
                   From fast-moving vertical content to cinematic long-form storytelling, we create media that makes the brand look as strong online as it is in real life.
                 </EditableText>
 
-                <EditableText id="home.svc.video.plan.lbl" as="span" className="mt-4 text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground" block>Planning</EditableText>
+                <EditableText id="home.svc.video.plan.lbl" as="span" className="mt-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground" block>Planning</EditableText>
                 <div className="mt-3 grid gap-4 sm:grid-cols-3">
                   {PLAN_STEPS.map((s, i) => (
                     <div key={i} className="rounded-2xl border border-border bg-background/60 p-4">
@@ -179,7 +179,7 @@ export default function Home() {
                   We distribute, schedule, manage, and optimize content across the platforms that shape awareness, engagement, and customer growth.
                 </EditableText>
 
-                <EditableText id="home.svc.social.lbl1" as="span" className="mt-4 text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground" block>Content Distribution</EditableText>
+                <EditableText id="home.svc.social.lbl1" as="span" className="mt-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground" block>Content Distribution</EditableText>
                 <div className="mt-3 grid gap-3 sm:grid-cols-3">
                   {DISTRIBUTION.map((p, i) => (
                     <div key={i} className="group flex h-[74px] items-center gap-2 overflow-hidden rounded-xl border border-border bg-background/60 p-3 transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-sm">

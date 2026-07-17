@@ -56,7 +56,7 @@ const SVC_VIDEO_IMG = 'https://media.base44.com/images/public/6a5a1601b834ac73c4
 const SVC_SOCIAL_IMG = 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/dd1cc73e6_generated_image.png';
 const ABOUT_IMG = 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/58acc856a_generated_image.png';
 const STATS_BG = 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/58acc856a_generated_image.png';
-const HERO_BG = 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/ec472045e_generated_image.png';
+const HERO_BG = 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/08497254c_generated_image.png';
 
 const STATS = [
   { value: '2', label: 'Core services — Production + Social', icon: 'Clapperboard' },

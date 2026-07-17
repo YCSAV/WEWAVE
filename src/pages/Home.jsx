@@ -395,7 +395,7 @@ export default function Home() {
               <div className="flex items-center gap-3 rounded-2xl border border-border bg-card p-4">
                 <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-primary text-primary-foreground"><Mail className="h-5 w-5" /></span>
                 <div className="min-w-0">
-                  <a href="mailto:sliceofhawaii@email.com" className="block truncate font-heading text-lg font-bold text-primary hover:text-accent">sliceofhawaii@email.com</a>
+                  <a href="mailto:sliceofhawaii@gmail.com" className="block truncate font-heading text-lg font-bold text-primary hover:text-accent">sliceofhawaii@gmail.com</a>
                   <EditableText id="home.about.email.note" as="p" className="text-xs leading-snug text-muted-foreground" block>We reply within one business day.</EditableText>
                 </div>
               </div>
@@ -419,7 +419,7 @@ export default function Home() {
                 Tell us where your brand needs more attention, stronger storytelling, better social management, or more customer action.
               </EditableText>
               <div className="mt-8 flex flex-wrap justify-center gap-3">
-                <a href="mailto:sliceofhawaii@email.com?subject=Content%20Project%20Inquiry" className="btn-gold">
+                <a href="mailto:sliceofhawaii@gmail.com?subject=Content%20Project%20Inquiry" className="btn-gold">
                   <EditableText id="home.cta.btn1" as="span">Start a conversation</EditableText> <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <a href="tel:+16179810000" className="btn-ghost border-background/20 bg-background/10 text-background hover:border-background/40">

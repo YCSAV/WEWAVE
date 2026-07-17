@@ -32,7 +32,7 @@ export default function Contact() {
                 Share your business, goals, current social presence, and what you want the content to accomplish. We’ll recommend the right starting point.
               </EditableText>
               <div className="mt-8 flex flex-wrap gap-3">
-                <a href="mailto:sliceofhawaii@email.com?subject=Content%20Project%20Inquiry" className="btn-gold">
+                <a href="mailto:sliceofhawaii@gmail.com?subject=Content%20Project%20Inquiry" className="btn-gold">
                   <EditableText id="contact.card.btn1" as="span">Email us</EditableText> <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <Link to="/ecosystem" className="btn-ghost"><EditableText id="contact.card.btn2" as="span">Review the Smart Ecosystem</EditableText></Link>
@@ -53,7 +53,7 @@ export default function Contact() {
               <div className="rounded-3xl border border-border bg-card p-7">
                 <span className="grid h-11 w-11 place-items-center rounded-2xl bg-tropical text-tropical-foreground"><Mail className="h-5 w-5" /></span>
                 <EditableText id="contact.info.email.lbl" as="small" className="mt-4 block text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground" block>Email</EditableText>
-                <a href="mailto:sliceofhawaii@email.com" className="mt-1 block font-heading text-lg font-bold text-primary hover:text-accent">sliceofhawaii@email.com</a>
+                <a href="mailto:sliceofhawaii@gmail.com" className="mt-1 block font-heading text-lg font-bold text-primary hover:text-accent">sliceofhawaii@gmail.com</a>
               </div>
               <div className="rounded-3xl border border-border bg-card p-7">
                 <span className="grid h-11 w-11 place-items-center rounded-2xl bg-primary text-primary-foreground"><Phone className="h-5 w-5" /></span>

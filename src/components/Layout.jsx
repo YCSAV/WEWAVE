@@ -107,7 +107,7 @@ export default function Layout() {
 
               <div className="text-sm text-muted-foreground">
                 <p className="font-medium text-primary">Honolulu, Hawaiʻi</p>
-                <a href="mailto:sliceofhawaii@email.com" className="mt-2 inline-block text-muted-foreground hover:text-accent transition-colors">sliceofhawaii@email.com</a>
+                <a href="mailto:sliceofhawaii@gmail.com" className="mt-2 inline-block text-muted-foreground hover:text-accent transition-colors">sliceofhawaii@gmail.com</a>
                 <a href="tel:+16179810000" className="mt-1 block text-muted-foreground hover:text-accent transition-colors">617-981-0000</a>
               </div>
             </div>

@@ -182,7 +182,7 @@ export default function Home() {
                 <EditableText id="home.svc.social.lbl1" as="span" className="mt-7 text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground" block>Content Distribution</EditableText>
                 <div className="mt-3 grid gap-3 sm:grid-cols-3">
                   {DISTRIBUTION.map((p, i) => (
-                    <div key={i} className="flex h-[64px] items-center gap-2 overflow-hidden rounded-xl border border-border bg-background/60 p-3">
+                    <div key={i} className="flex h-[74px] items-center gap-2 overflow-hidden rounded-xl border border-border bg-background/60 p-3">
                       <span className="dist-icon grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-card ring-1 ring-border">
                         <EditableIcon id={`home.svc.social.dist.${i}.icon`} markup={p.brand ? BRAND_MARKUP[p.brand] : undefined} as={p.icon ? LUCIDE[p.icon] : undefined} iconClass="h-5 w-5" colorClass={p.icon ? 'text-accent' : undefined} />
                       </span>

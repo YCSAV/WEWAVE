@@ -6,9 +6,9 @@ import { EditableText } from '@/components/edit/Editable';
 const SLICE_LOGO = 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/040f619ea_slice-logo-watermark.png';
 
 const PEOPLE = [
-  { name: 'Jay Ham', role: 'Founder & Creative Director', desc: 'Creative direction, strategy, client relationships, social media management, and campaign development.', icon: Sparkles },
-  { name: 'Drake Dela Cruz', role: 'Partner & Head Videographer', desc: 'Cinematography, production, visual execution, lighting, and lead camera direction.', icon: Camera },
-];
+{ name: 'Jay Ham', role: 'Founder & Creative Director', desc: 'Creative direction, strategy, client relationships, social media management, and campaign development.', icon: Sparkles },
+{ name: 'Drake Dela Cruz', role: 'Partner & Head Videographer', desc: 'Cinematography, production, visual execution, lighting, and lead camera direction.', icon: Camera }];
+
 
 export default function About() {
   return (
@@ -38,11 +38,11 @@ export default function About() {
               </div>
             </div>
             <div className="mt-8 grid grid-cols-4 gap-2">
-              {[1, 2, 3, 4].map(i => (
-                <div key={i} className="aspect-square overflow-hidden rounded-xl ring-1 ring-border">
-                  <img src={SLICE_LOGO} alt="" className="h-full w-full object-cover opacity-90" />
+              {[1, 2, 3, 4].map((i) =>
+              <div key={i} className="aspect-square overflow-hidden rounded-xl ring-1 ring-border">
+                  <img src={SLICE_LOGO} alt="" className="h-full w-full object-cover opacity-90 hidden" />
                 </div>
-              ))}
+              )}
             </div>
           </div>
 
@@ -84,8 +84,8 @@ export default function About() {
                     </div>
                   </div>
                   <EditableText id={`about.team.${i}.d`} as="p" className="mt-5 leading-relaxed text-muted-foreground" block>{p.desc}</EditableText>
-                </article>
-              );
+                </article>);
+
             })}
           </div>
         </div>
@@ -102,6 +102,6 @@ export default function About() {
           </div>
         </div>
       </section>
-    </>
-  );
+    </>);
+
 }

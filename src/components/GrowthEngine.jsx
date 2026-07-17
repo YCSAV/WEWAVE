@@ -4,18 +4,18 @@ import { EditableText, EditableIcon, Movable, LUCIDE } from '@/components/edit/E
 import { DEVICES_MARKUP } from '@/components/BrandIcons';
 
 const NODES = [
-  { n: '01', icon: 'Store', title: 'Your Business', caption: 'Products, services, people, and experience', pos: 'top' },
-  { n: '02', icon: 'Clapperboard', title: 'Premium Content', caption: 'Short-form and long-form production', pos: 'right' },
-  { n: '03', icon: 'Megaphone', title: 'Marketing + Brand Growth', caption: 'Attention, awareness, reach, and trust', pos: 'bottom' },
-  { n: '04', icon: 'TrendingUp', title: 'Revenue + Customer Growth', caption: 'More traffic, engagement, and sales', pos: 'left' },
-];
+{ n: '01', icon: 'Store', title: 'Your Business', caption: 'Products, services, people, and experience', pos: 'top' },
+{ n: '02', icon: 'Clapperboard', title: 'Premium Content', caption: 'Short-form and long-form production', pos: 'right' },
+{ n: '03', icon: 'Megaphone', title: 'Marketing + Brand Growth', caption: 'Attention, awareness, reach, and trust', pos: 'bottom' },
+{ n: '04', icon: 'TrendingUp', title: 'Revenue + Customer Growth', caption: 'More traffic, engagement, and sales', pos: 'left' }];
+
 
 // Each node sits centered on its anchor point so the diagram is perfectly symmetric.
 const POS_CLASS = {
   top: 'left-1/2 top-0 -translate-x-1/2',
   right: 'right-0 top-1/2 -translate-y-1/2',
   bottom: 'left-1/2 bottom-0 -translate-x-1/2',
-  left: 'left-0 top-1/2 -translate-y-1/2',
+  left: 'left-0 top-1/2 -translate-y-1/2'
 };
 
 function NodeCard({ node, idx }) {
@@ -35,8 +35,8 @@ function NodeCard({ node, idx }) {
           {node.caption}
         </EditableText>
       </div>
-    </Movable>
-  );
+    </Movable>);
+
 }
 
 export default function GrowthEngine() {
@@ -59,7 +59,7 @@ export default function GrowthEngine() {
 
         {/* Center hub */}
         <Movable id="ge.hub" className="absolute left-1/2 top-1/2 w-[30%] max-w-[176px] -translate-x-1/2 -translate-y-1/2">
-          <div className="flex flex-col items-center gap-2 rounded-2xl border border-accent/40 bg-accent/10 px-4 py-5 text-center backdrop-blur-sm">
+          <div className="flex flex-col items-center gap-2 rounded-2xl border border-accent/40 bg-accent/10 px-4 text-center backdrop-blur-sm py-1">
             <span className="grid h-12 w-12 place-items-center rounded-xl bg-accent text-accent-foreground">
               <EditableIcon id="ge.hub.icon" markup={DEVICES_MARKUP} iconClass="h-7 w-7" />
             </span>
@@ -75,22 +75,22 @@ export default function GrowthEngine() {
       {/* Mobile linear flow */}
       <div className="grid gap-3 sm:hidden">
         {[
-          { icon: 'Devices', title: 'Your Integrated Growth Engine', caption: 'Production + distribution + optimization, working together', markup: DEVICES_MARKUP },
-          ...NODES.map(n => ({ ...n, markup: null })),
-        ].map((n, i) => (
-          <div key={i} className="flex items-center gap-3 rounded-2xl border border-border bg-card p-4">
+        { icon: 'Devices', title: 'Your Integrated Growth Engine', caption: 'Production + distribution + optimization, working together', markup: DEVICES_MARKUP },
+        ...NODES.map((n) => ({ ...n, markup: null }))].
+        map((n, i) =>
+        <div key={i} className="flex items-center gap-3 rounded-2xl border border-border bg-card p-4">
             <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-primary text-primary-foreground">
-              {n.markup
-                ? <EditableIcon id={`ge.m.${i}.icon`} markup={n.markup} iconClass="h-6 w-6" />
-                : <EditableIcon id={`ge.m.${i}.icon`} as={LUCIDE[n.icon]} iconClass="h-5 w-5" />}
+              {n.markup ?
+            <EditableIcon id={`ge.m.${i}.icon`} markup={n.markup} iconClass="h-6 w-6" /> :
+            <EditableIcon id={`ge.m.${i}.icon`} as={LUCIDE[n.icon]} iconClass="h-5 w-5" />}
             </span>
             <div>
               <EditableText id={`ge.m.${i}.title`} as="strong" className="block font-heading text-sm font-bold text-primary" block>{n.title}</EditableText>
               <EditableText id={`ge.m.${i}.cap`} as="span" className="text-xs text-muted-foreground" block>{n.caption}</EditableText>
             </div>
           </div>
-        ))}
+        )}
       </div>
-    </div>
-  );
+    </div>);
+
 }

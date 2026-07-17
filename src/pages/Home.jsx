@@ -360,15 +360,6 @@ export default function Home() {
                 </svg>
                 <EditableText id="home.about.loc" as="span">Based in Honolulu, Hawaiʻi</EditableText>
               </div>
-              <div className="mt-5 flex items-center gap-3">
-                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-accent text-accent-foreground shadow-lg shadow-accent/30">
-                  <span className="font-heading text-base font-extrabold leading-none tracking-tight">808</span>
-                </span>
-                <div className="text-background/85">
-                  <EditableText id="home.about.808.t" as="strong" className="block font-heading text-sm font-bold" block>808</EditableText>
-                  <EditableText id="home.about.808.s" as="span" className="text-xs text-background/70" block>Hawaiʻi area code — serving the islands</EditableText>
-                </div>
-              </div>
             </div>
           </div>
 

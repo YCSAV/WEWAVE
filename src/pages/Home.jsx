@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Clapperboard, Share2, Lightbulb, Camera, SlidersHorizontal, ArrowUpRight, Sparkles, Play, ArrowRight,
+  Clapperboard, Share2, Lightbulb, Camera, SlidersHorizontal, ArrowUpRight, Sparkles, Play, ArrowRight, Phone,
 } from 'lucide-react';
 import GrowthEngine from '@/components/GrowthEngine';
 import { EditableText, EditableIcon, Movable, LUCIDE } from '@/components/edit/Editable';
@@ -381,6 +381,13 @@ export default function Home() {
             <Link to="/about" className="mt-7 inline-flex items-center gap-1 text-sm font-semibold text-primary hover:text-accent">
               Learn more about the team <ArrowUpRight className="h-4 w-4" />
             </Link>
+            <div className="mt-6 flex items-center gap-3 rounded-2xl border border-border bg-card p-4">
+              <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-accent text-accent-foreground"><Phone className="h-5 w-5" /></span>
+              <div className="min-w-0">
+                <a href="tel:+16179810000" className="font-heading text-lg font-bold text-primary hover:text-accent">617-981-0000</a>
+                <EditableText id="home.about.phone.note" as="p" className="text-xs leading-snug text-muted-foreground" block>617 area code — proudly serving the 808 across Honolulu and all of Hawaiʻi.</EditableText>
+              </div>
+            </div>
           </div>
         </div>
       </section>

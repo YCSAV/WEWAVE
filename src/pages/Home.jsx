@@ -4,7 +4,6 @@ import {
   Clapperboard, Share2, Lightbulb, Camera, SlidersHorizontal, ArrowUpRight, Sparkles, Play,
 } from 'lucide-react';
 import GrowthEngine from '@/components/GrowthEngine';
-import BackgroundIcons from '@/components/BackgroundIcons';
 import { EditableText, EditableIcon, Movable, LUCIDE } from '@/components/edit/Editable';
 import { BRAND_MARKUP } from '@/components/BrandIcons';
 
@@ -59,7 +58,6 @@ export default function Home() {
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[520px] rounded-full bg-accent/10 blur-3xl" />
-        <BackgroundIcons preset="hero" />
         <div className="container-wide grid items-center gap-12 py-14 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8">
           <div>
             <span className="eyebrow"><Sparkles className="h-3.5 w-3.5" />
@@ -101,7 +99,6 @@ export default function Home() {
 
       {/* Services */}
       <section id="services" className="relative overflow-hidden py-20 sm:py-28">
-        <BackgroundIcons preset="services" />
         <div className="container-wide">
           <div className="grid gap-8 border-b border-border pb-12 md:grid-cols-[1fr_1fr] md:items-end">
             <div>
@@ -242,7 +239,6 @@ export default function Home() {
 
       {/* Featured Work */}
       <section className="relative overflow-hidden border-y border-border bg-secondary/30 py-20 sm:py-28">
-        <BackgroundIcons preset="work" />
         <div className="container-wide">
           <div className="grid gap-8 border-b border-border pb-12 md:grid-cols-[1fr_1fr] md:items-end">
             <div>
@@ -282,7 +278,6 @@ export default function Home() {
 
       {/* About teaser */}
       <section id="about" className="relative overflow-hidden py-20 sm:py-28">
-        <BackgroundIcons preset="about" />
         <div className="container-wide grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <div className="relative overflow-hidden rounded-3xl border border-border bg-secondary/50 p-8 sm:p-10">
             <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-accent/15 blur-2xl" />

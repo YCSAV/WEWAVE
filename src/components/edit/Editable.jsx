@@ -7,7 +7,7 @@ import {
   MapPin, Camera, Lightbulb, SlidersHorizontal, Share2, MessageCircle, Play,
   Layers, PenTool, Image, Music2, Search, Target, Rocket, Award, ShieldCheck,
   Leaf, Wifi, Radio, Gauge, Sprout, Briefcase, DollarSign, Activity, Eye,
-  MousePointer2, HelpCircle,
+  MousePointer2, HelpCircle, Palmtree, Sun, Waves, Coffee, Utensils, Mic,
 } from 'lucide-react';
 
 export const LUCIDE = {
@@ -16,7 +16,7 @@ export const LUCIDE = {
   MapPin, Camera, Lightbulb, SlidersHorizontal, Share2, MessageCircle, Play,
   Layers, PenTool, Image, Music2, Search, Target, Rocket, Award, ShieldCheck,
   Leaf, Wifi, Radio, Gauge, Sprout, Briefcase, DollarSign, Activity, Eye,
-  MousePointer2,
+  MousePointer2, Palmtree, Sun, Waves, Coffee, Utensils, Mic,
 };
 
 /* Editable text — contentEditable in edit mode, persisted to localStorage by id */

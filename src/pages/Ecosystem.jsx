@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, Sprout, Radio, Gauge, Play } from 'lucide-react';
+import { ArrowUpRight, Sprout, Radio, Gauge, Play, Smartphone, Tv } from 'lucide-react';
 import { EditableText, Movable } from '@/components/edit/Editable';
 
 const PHASES = [
-  { no: '01', icon: Sprout, title: 'Growth', desc: 'Build a consistent vertical presence through premium short-form content and managed social distribution.', items: ['2–4 short-form videos per month', 'Instagram + TikTok distribution', 'Meta advertising support', 'One half-day shoot per month'] },
-  { no: '02', icon: Radio, title: 'Reach', desc: 'Add cinematic medium- and long-form storytelling that builds authority, context, and trust.', items: ['2–4 medium-form videos or one long-form video', 'YouTube distribution and management', 'Google advertising and insights', 'One full-day shoot per month'] },
-  { no: '03', icon: Gauge, title: 'Optimization', desc: 'Connect short-form discovery and long-form trust into one complete content engine.', items: ['2–4 short-form videos', '2–4 medium-form videos or one long-form video', 'All-platform distribution and management', 'Google + Meta advertising and insights', 'Two shoot days per month'] },
+  { no: '01', icon: Sprout, devices: [Smartphone], title: 'Growth', desc: 'Build a consistent vertical presence through premium short-form content and managed social distribution.', items: ['2–4 short-form videos per month', 'Instagram + TikTok distribution', 'Meta advertising support', 'One half-day shoot per month'] },
+  { no: '02', icon: Radio, devices: [Tv], title: 'Reach', desc: 'Add cinematic medium- and long-form storytelling that builds authority, context, and trust.', items: ['2–4 medium-form videos or one long-form video', 'YouTube distribution and management', 'Google advertising and insights', 'One full-day shoot per month'] },
+  { no: '03', icon: Gauge, devices: [Smartphone, Tv], title: 'Optimization', desc: 'Connect short-form discovery and long-form trust into one complete content engine.', items: ['2–4 short-form videos', '2–4 medium-form videos or one long-form video', 'All-platform distribution and management', 'Google + Meta advertising and insights', 'Two shoot days per month'] },
 ];
 
 const EXAMPLES = [
@@ -41,7 +41,12 @@ export default function Ecosystem() {
                 <article className={`flex h-full flex-col rounded-3xl border p-7 sm:p-8 ${featured ? 'border-accent/40 bg-accent/5' : 'border-border bg-card'}`}>
                   <div className="flex items-center justify-between">
                     <EditableText id={`eco.phase.${i}.no`} as="span" className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Phase {p.no}</EditableText>
-                    <span className={`grid h-12 w-12 place-items-center rounded-2xl ${featured ? 'bg-accent text-accent-foreground' : 'bg-primary text-primary-foreground'}`}><Icon className="h-6 w-6" /></span>
+                    <div className="flex items-center gap-2">
+                      {p.devices.map((D, k) => (
+                        <span key={k} title={D === Smartphone ? 'Short-form (vertical)' : 'Long-form (horizontal)'} className="grid h-12 w-12 place-items-center rounded-2xl bg-primary text-primary-foreground"><D className="h-6 w-6" /></span>
+                      ))}
+                      <span className={`grid h-12 w-12 place-items-center rounded-2xl ${featured ? 'bg-accent text-accent-foreground' : 'bg-primary text-primary-foreground'}`}><Icon className="h-6 w-6" /></span>
+                    </div>
                   </div>
                   <h2 className="mt-5 font-heading text-2xl font-extrabold tracking-tight text-primary"><EditableText id={`eco.phase.${i}.t`} as="span">{p.title}</EditableText></h2>
                   <EditableText id={`eco.phase.${i}.d`} as="p" className="mt-3 text-sm leading-relaxed text-muted-foreground" block>{p.desc}</EditableText>

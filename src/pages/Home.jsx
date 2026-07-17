@@ -362,6 +362,7 @@ export default function Home() {
                 </svg>
                 <EditableText id="home.about.loc" as="span">Based in Honolulu, Hawaiʻi</EditableText>
               </div>
+              <span className="pointer-events-none mt-3 font-heading text-[88px] font-extrabold leading-none tracking-tighter text-background/15">808</span>
             </div>
           </div>
 

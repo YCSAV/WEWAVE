@@ -38,19 +38,19 @@ export default function Ecosystem() {
             const featured = i === 2;
             return (
               <Movable key={p.no} id={`eco.phase.${i}`}>
-                <article className={`flex h-full flex-col rounded-3xl border p-7 sm:p-8 ${featured ? 'border-accent/40 bg-accent/5' : 'border-border bg-card'}`}>
-                  <div className="flex items-center justify-between">
+                <article className={`relative flex h-full flex-col overflow-hidden rounded-3xl border p-7 sm:p-8 ${featured ? 'border-accent/40 bg-accent/5' : 'border-border bg-card'}`}>
+                  <Icon className="pointer-events-none absolute -bottom-8 -right-6 h-44 w-44 text-primary opacity-[0.06]" />
+                  <div className="relative flex items-center justify-between">
                     <EditableText id={`eco.phase.${i}.no`} as="span" className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Phase {p.no}</EditableText>
                     <div className="flex items-center gap-2">
                       {p.devices.map((D, k) => (
                         <span key={k} title={D === Smartphone ? 'Short-form (vertical)' : 'Long-form (horizontal)'} className="grid h-12 w-12 place-items-center rounded-2xl bg-primary text-primary-foreground"><D className="h-6 w-6" /></span>
                       ))}
-                      <span className={`grid h-12 w-12 place-items-center rounded-2xl ${featured ? 'bg-accent text-accent-foreground' : 'bg-primary text-primary-foreground'}`}><Icon className="h-6 w-6" /></span>
                     </div>
                   </div>
                   <h2 className="mt-5 font-heading text-2xl font-extrabold tracking-tight text-primary"><EditableText id={`eco.phase.${i}.t`} as="span">{p.title}</EditableText></h2>
                   <EditableText id={`eco.phase.${i}.d`} as="p" className="mt-3 text-sm leading-relaxed text-muted-foreground" block>{p.desc}</EditableText>
-                  <ul className="mt-6 space-y-3 border-t border-border pt-5">
+                  <ul className="relative mt-6 space-y-3 border-t border-border pt-5">
                     {p.items.map((it, j) => (
                       <li key={j} className="flex items-start gap-2.5 text-sm text-foreground">
                         <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />

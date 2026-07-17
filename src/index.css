@@ -117,6 +117,13 @@
   animation: flow-dash 1.4s linear infinite;
 }
 
+@keyframes flywheel-spin { to { transform: rotate(360deg); } }
+.flywheel-spin {
+  animation: flywheel-spin 30s linear infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
 /* In-app editing affordances */
 .edit-outline { outline: 1px dashed hsl(var(--accent) / 0.55); outline-offset: 3px; border-radius: 6px; cursor: text; }
 .edit-outline:hover { background: hsl(var(--accent) / 0.06); }

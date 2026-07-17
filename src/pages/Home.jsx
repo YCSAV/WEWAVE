@@ -115,7 +115,7 @@ export default function Home() {
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
             {/* Video Production */}
             <Movable id="home.svc.video" className="lg:transform-none">
-              <article className="flex flex-col rounded-3xl border border-border bg-card p-7 sm:p-9">
+              <article className="flex h-full flex-col rounded-3xl border border-border bg-card p-7 sm:p-9">
                 <div className="flex items-start gap-4">
                   <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-primary text-primary-foreground">
                     <EditableIcon id="home.svc.video.icon" as={Clapperboard} iconClass="h-7 w-7" />
@@ -155,7 +155,7 @@ export default function Home() {
                   ))}
                 </div>
 
-                <div className="mt-6 flex flex-wrap gap-2">
+                <div className="mt-auto pt-6 flex flex-wrap gap-2">
                   {['Short-form video', 'YouTube production', 'Brand films', 'Commercial content', 'Campaign creative'].map((t, i) => (
                     <EditableText key={i} id={`home.svc.video.tag.${i}`} as="span" className="rounded-full border border-border bg-background px-3 py-1.5 text-xs font-medium text-muted-foreground">{t}</EditableText>
                   ))}
@@ -165,7 +165,7 @@ export default function Home() {
 
             {/* Social Media Management */}
             <Movable id="home.svc.social">
-              <article className="flex flex-col rounded-3xl border border-border bg-card p-7 sm:p-9">
+              <article className="flex h-full flex-col rounded-3xl border border-border bg-card p-7 sm:p-9">
                 <div className="flex items-start gap-4">
                   <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-accent text-accent-foreground">
                     <EditableIcon id="home.svc.social.icon" as={Share2} iconClass="h-7 w-7" />
@@ -182,13 +182,13 @@ export default function Home() {
                 <EditableText id="home.svc.social.lbl1" as="span" className="mt-7 text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground" block>Content Distribution</EditableText>
                 <div className="mt-3 grid gap-3 sm:grid-cols-3">
                   {DISTRIBUTION.map((p, i) => (
-                    <div key={i} className="flex items-center gap-3 rounded-xl border border-border bg-background/60 p-3">
-                      <span className="dist-icon grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-card ring-1 ring-border">
+                    <div key={i} className="flex h-[64px] items-center gap-2 overflow-hidden rounded-xl border border-border bg-background/60 p-3">
+                      <span className="dist-icon grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-card ring-1 ring-border">
                         <EditableIcon id={`home.svc.social.dist.${i}.icon`} markup={p.brand ? BRAND_MARKUP[p.brand] : undefined} as={p.icon ? LUCIDE[p.icon] : undefined} iconClass="h-5 w-5" colorClass={p.icon ? 'text-accent' : undefined} />
                       </span>
-                      <div className="min-w-0">
-                        <EditableText id={`home.svc.social.dist.${i}.n`} as="strong" className="block text-sm font-semibold text-primary" block>{p.name}</EditableText>
-                        <EditableText id={`home.svc.social.dist.${i}.note`} as="span" className="text-xs text-muted-foreground" block>{p.note}</EditableText>
+                      <div className="min-w-0 flex-1">
+                        <EditableText id={`home.svc.social.dist.${i}.n`} as="strong" className="block truncate text-sm font-semibold text-primary" block>{p.name}</EditableText>
+                        <EditableText id={`home.svc.social.dist.${i}.note`} as="span" className="block truncate text-xs text-muted-foreground" block>{p.note}</EditableText>
                       </div>
                     </div>
                   ))}
@@ -209,7 +209,7 @@ export default function Home() {
                   ))}
                 </div>
 
-                <div className="mt-6 flex flex-wrap gap-2">
+                <div className="mt-auto pt-6 flex flex-wrap gap-2">
                   {['Publishing', 'Scheduling', 'Community management', 'Paid distribution', 'Analytics'].map((t, i) => (
                     <EditableText key={i} id={`home.svc.social.tag.${i}`} as="span" className="rounded-full border border-border bg-background px-3 py-1.5 text-xs font-medium text-muted-foreground">{t}</EditableText>
                   ))}

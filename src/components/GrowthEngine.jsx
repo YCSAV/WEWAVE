@@ -10,10 +10,10 @@ const TEXT_BODY = '#a0b1b9';
 
 // Four steps around the flywheel — clockwise from top. Text kept exactly as original.
 const NODES = [
-  { n: '01', icon: 'Store',        title: 'Your Business',           caption: 'Products, services & experience',           x: 50, y: 16 },
+  { n: '01', icon: 'Store',        title: 'Your Business',           caption: 'Products, services, and experience',           x: 50, y: 16 },
   { n: '02', icon: 'Clapperboard', title: 'Premium Content',         caption: 'Short-form and long-form production',        x: 84, y: 50 },
   { n: '03', icon: 'Megaphone',    title: 'Marketing + Brand Reach', caption: 'Build awareness and trust',                 x: 50, y: 84 },
-  { n: '04', icon: 'TrendingUp',   title: 'Customer Growth',        caption: 'Increase engagement, foot traffic & sales', x: 16, y: 50 },
+  { n: '04', icon: 'TrendingUp',   title: 'Customer Growth',        caption: 'Increase engagement, foot traffic, and sales', x: 16, y: 50 },
 ];
 
 // Arrowheads at the midpoints between consecutive nodes — clockwise tangent.

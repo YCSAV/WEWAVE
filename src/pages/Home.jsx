@@ -52,6 +52,18 @@ const TEAM = [
   { name: 'Drake Dela Cruz', role: 'Partner & Head Videographer', desc: 'Cinematography, production, visual execution, and lead camera direction.' },
 ];
 
+const SVC_VIDEO_IMG = 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/ff95a23da_generated_image.png';
+const SVC_SOCIAL_IMG = 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/dd1cc73e6_generated_image.png';
+const ABOUT_IMG = 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/ff95a23da_generated_image.png';
+const STATS_BG = 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/58acc856a_generated_image.png';
+
+const STATS = [
+  { value: '2', label: 'Core services — Production + Social', icon: 'Clapperboard' },
+  { value: '6', label: 'Platforms distributed & managed', icon: 'Share2' },
+  { value: '1', label: 'Integrated team, no silos', icon: 'Users' },
+  { value: '808', label: 'Honolulu, Hawaiʻi based', icon: 'MapPin' },
+];
+
 export default function Home() {
   return (
     <>
@@ -115,7 +127,12 @@ export default function Home() {
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
             {/* Video Production */}
             <Movable id="home.svc.video" className="lg:transform-none">
-              <article className="flex h-full flex-col rounded-3xl border border-border bg-card p-7 sm:p-9">
+              <article className="flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card">
+                <div className="relative h-44 overflow-hidden">
+                  <img src={SVC_VIDEO_IMG} alt="" className="h-full w-full object-cover" loading="lazy" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
+                </div>
+                <div className="flex flex-1 flex-col p-7 sm:p-9">
                 <div className="flex items-start gap-4">
                   <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-primary text-primary-foreground">
                     <EditableIcon id="home.svc.video.icon" as={Clapperboard} iconClass="h-7 w-7" />
@@ -160,12 +177,18 @@ export default function Home() {
                     <EditableText key={i} id={`home.svc.video.tag.${i}`} as="span" className="rounded-full border border-border bg-background px-3 py-1.5 text-xs font-medium text-muted-foreground">{t}</EditableText>
                   ))}
                 </div>
+                </div>
               </article>
             </Movable>
 
             {/* Social Media Management */}
             <Movable id="home.svc.social">
-              <article className="flex h-full flex-col rounded-3xl border border-border bg-card p-7 sm:p-9">
+              <article className="flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card">
+                <div className="relative h-44 overflow-hidden">
+                  <img src={SVC_SOCIAL_IMG} alt="" className="h-full w-full object-cover" loading="lazy" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
+                </div>
+                <div className="flex flex-1 flex-col p-7 sm:p-9">
                 <div className="flex items-start gap-4">
                   <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-accent text-accent-foreground">
                     <EditableIcon id="home.svc.social.icon" as={Share2} iconClass="h-7 w-7" />
@@ -213,6 +236,7 @@ export default function Home() {
                   {['Publishing', 'Scheduling', 'Community management', 'Paid distribution', 'Analytics'].map((t, i) => (
                     <EditableText key={i} id={`home.svc.social.tag.${i}`} as="span" className="rounded-full border border-border bg-background px-3 py-1.5 text-xs font-medium text-muted-foreground">{t}</EditableText>
                   ))}
+                </div>
                 </div>
               </article>
             </Movable>
@@ -279,30 +303,52 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Stats band */}
+      <section className="relative overflow-hidden border-y border-border">
+        <img src={STATS_BG} alt="" className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.12]" loading="lazy" />
+        <div className="absolute inset-0 bg-primary/92" />
+        <div className="relative container-wide py-14 sm:py-16">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {STATS.map((s, i) => (
+              <div key={i} className="text-center sm:text-left">
+                <EditableIcon id={`home.stat.${i}.icon`} as={LUCIDE[s.icon]} iconClass="h-6 w-6" colorClass="text-accent" />
+                <div className="mt-3 font-heading text-4xl font-extrabold tracking-tight text-background sm:text-5xl">
+                  <EditableText id={`home.stat.${i}.v`} as="span">{s.value}</EditableText>
+                </div>
+                <EditableText id={`home.stat.${i}.l`} as="p" className="mt-1 text-sm text-background/70" block>{s.label}</EditableText>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* About teaser */}
       <section id="about" className="relative overflow-hidden py-20 sm:py-28">
         <div className="container-wide grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-          <div className="relative overflow-hidden rounded-3xl border border-border bg-secondary/50 p-8 sm:p-10">
-            <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-accent/15 blur-2xl" />
-            <span className="eyebrow"><EditableText id="home.about.eyebrow" as="span">About Us</EditableText></span>
-            <h2 className="mt-4 font-heading text-3xl font-extrabold leading-tight tracking-tight text-primary sm:text-4xl">
-              <EditableText id="home.about.h2" as="span" block>Creative production with a clear business purpose.</EditableText>
-            </h2>
-            <div className="mt-6 rounded-2xl border border-border bg-card p-4">
-              <EditableText id="home.about.badge.t" as="strong" className="block font-heading font-bold text-primary" block>One integrated team.</EditableText>
-              <EditableText id="home.about.badge.s" as="span" className="text-sm text-muted-foreground" block>Strategy. Production. Distribution. Optimization.</EditableText>
-            </div>
-            <div className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
-              <svg viewBox="0 0 64 20" className="h-5 w-16 shrink-0 text-accent" fill="currentColor" aria-hidden="true">
-                <circle cx="4" cy="10" r="1.2" />
-                <circle cx="11" cy="9.5" r="2.6" />
-                <path d="M20 8.4q3.6-3 6.6.9 1 3-3.6 3-4 0-3-3.9z" />
-                <circle cx="33" cy="11" r="1.7" />
-                <circle cx="38" cy="10.5" r="1.4" />
-                <path d="M43.5 9q3.2-4.6 6.6-.1.8 3-3 2.6-4 0-3.6-2.5z" />
-                <ellipse cx="57" cy="11" rx="6.5" ry="5.4" />
-              </svg>
-              <EditableText id="home.about.loc" as="span">Based in Honolulu, Hawaiʻi</EditableText>
+          <div className="relative overflow-hidden rounded-3xl border border-border">
+            <img src={ABOUT_IMG} alt="On-location production in Honolulu, Hawaiʻi" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/45 to-primary/15" />
+            <div className="relative flex min-h-[440px] flex-col justify-end p-8 sm:p-10">
+              <span className="eyebrow text-background/80"><EditableText id="home.about.eyebrow" as="span">About Us</EditableText></span>
+              <h2 className="mt-3 font-heading text-3xl font-extrabold leading-tight tracking-tight text-background sm:text-4xl">
+                <EditableText id="home.about.h2" as="span" block>Creative production with a clear business purpose.</EditableText>
+              </h2>
+              <div className="mt-5 rounded-2xl border border-background/20 bg-background/10 p-4 backdrop-blur-sm">
+                <EditableText id="home.about.badge.t" as="strong" className="block font-heading font-bold text-background" block>One integrated team.</EditableText>
+                <EditableText id="home.about.badge.s" as="span" className="text-sm text-background/80" block>Strategy. Production. Distribution. Optimization.</EditableText>
+              </div>
+              <div className="mt-4 flex items-center gap-2 text-sm text-background/80">
+                <svg viewBox="0 0 64 20" className="h-5 w-16 shrink-0 text-accent" fill="currentColor" aria-hidden="true">
+                  <circle cx="4" cy="10" r="1.2" />
+                  <circle cx="11" cy="9.5" r="2.6" />
+                  <path d="M20 8.4q3.6-3 6.6.9 1 3-3.6 3-4 0-3-3.9z" />
+                  <circle cx="33" cy="11" r="1.7" />
+                  <circle cx="38" cy="10.5" r="1.4" />
+                  <path d="M43.5 9q3.2-4.6 6.6-.1.8 3-3 2.6-4 0-3.6-2.5z" />
+                  <ellipse cx="57" cy="11" rx="6.5" ry="5.4" />
+                </svg>
+                <EditableText id="home.about.loc" as="span">Based in Honolulu, Hawaiʻi</EditableText>
+              </div>
             </div>
           </div>
 

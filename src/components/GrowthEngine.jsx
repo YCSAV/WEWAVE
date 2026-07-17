@@ -18,7 +18,7 @@ function NodeCard({ node, idx }) {
       className="absolute w-[140px]"
       style={{ left: `${node.x}%`, top: `${node.y}%`, transform: 'translate(-50%, -50%)' }}
     >
-      <div className="flex h-[150px] w-[140px] flex-col items-center justify-center gap-2 rounded-2xl border border-border bg-card px-3 py-3 text-center shadow-[0_8px_24px_-12px_rgba(0,0,0,0.18)]">
+      <div className="flex h-[168px] w-[140px] flex-col items-center justify-center gap-2 rounded-2xl border border-border bg-card px-3 py-3.5 text-center shadow-[0_8px_24px_-12px_rgba(0,0,0,0.18)]">
         <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-accent">Step {node.n}</span>
         <span className="grid h-11 w-11 place-items-center rounded-xl bg-primary text-primary-foreground">
           <EditableIcon id={`ge.node.${idx}.icon`} as={LUCIDE[node.icon]} iconClass="h-5 w-5" />

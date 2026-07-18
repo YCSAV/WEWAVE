@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, Globe, Camera, Music2, PenTool, Sparkles, Check, Building2 } from 'lucide-react';
+import { ArrowUpRight, Globe, Camera, Headphones, PenTool, Sparkles, Check, Building2 } from 'lucide-react';
 import { EditableText, EditableIcon, Movable, LUCIDE } from '@/components/edit/Editable';
 
 const SERVICES = [
@@ -37,7 +37,7 @@ const SERVICES = [
     img: null,
   },
   {
-    icon: 'Music2',
+    icon: 'Headphones',
     title: 'Custom Audio',
     sub: 'Recording, voiceover, and sound design.',
     body:
@@ -85,7 +85,7 @@ const MORE = [
   'Print & flyers',
 ];
 
-const ICONS = { Globe, Camera, Music2, PenTool };
+const ICONS = { Globe, Camera, Headphones, PenTool };
 
 export default function StudioServices() {
   return (

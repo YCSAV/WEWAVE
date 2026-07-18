@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, Globe, Camera, Music2, PenTool, Sparkles, Check } from 'lucide-react';
+import { ArrowUpRight, Globe, Camera, Music2, PenTool, Sparkles, Check, Building2 } from 'lucide-react';
 import { EditableText, EditableIcon, Movable, LUCIDE } from '@/components/edit/Editable';
 
 const SERVICES = [
@@ -162,6 +162,17 @@ export default function StudioServices() {
                 </Movable>
               );
             })}
+          </div>
+
+          {/* In-house studio + island network */}
+          <div className="mt-10 flex flex-col items-start gap-4 rounded-3xl border border-accent/30 bg-accent/5 p-7 sm:flex-row sm:items-center sm:justify-between sm:p-9">
+            <div className="flex items-start gap-4">
+              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-accent text-accent-foreground"><Building2 className="h-6 w-6" /></span>
+              <div>
+                <h3 className="font-heading text-lg font-bold text-primary"><EditableText id="studio.net.t" as="span">An in-house studio — and an island-wide network.</EditableText></h3>
+                <EditableText id="studio.net.d" as="p" className="mt-1 text-sm leading-relaxed text-muted-foreground" block>We own and operate our in-house studio, and we have great relationships with every other physical studio location and creator on the island — so whatever your project needs, we can make it happen.</EditableText>
+              </div>
+            </div>
           </div>
 
           {/* More from the studio */}

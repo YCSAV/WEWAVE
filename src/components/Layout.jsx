@@ -44,7 +44,6 @@ export default function Layout() {
                 <img src={BRAND_LOGO} alt="WeWave Socials" className="h-full w-full scale-110 object-cover" />
               </span>
               <span className="flex flex-col leading-none">
-                <EditableText id="nav.brand.sub" as="span" className="text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Content & Social</EditableText>
                 <EditableText id="nav.brand.name" as="span" className="font-heading text-[17px] font-extrabold tracking-tight text-primary">WeWave Socials</EditableText>
               </span>
             </Link>

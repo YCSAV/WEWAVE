@@ -72,6 +72,7 @@ const SERVICES = [
 
 const MORE = [
   'Drone & aerial',
+  'Green screen',
   'Live streaming',
   'Music videos',
   'Artist & label content',

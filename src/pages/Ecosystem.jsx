@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowUpRight, Sprout, Radio, Gauge, Play, Smartphone, Tv } from 'lucide-react';
 import { EditableText, Movable } from '@/components/edit/Editable';
 import { BRAND_MARKUP } from '@/components/BrandIcons';
+import HoverVideo from '@/components/HoverVideo';
 
 const PHASES = [
   { no: '01', icon: Sprout, devices: [Smartphone], title: 'Growth', desc: 'Build a consistent vertical presence through premium short-form content and managed social distribution.', items: ['2–4 short-form videos per month', 'Instagram + TikTok distribution', 'Meta advertising support', 'One half-day shoot per month'] },
@@ -12,8 +13,8 @@ const PHASES = [
 
 const EXAMPLES = [
   { phase: 'Growth', media: [{ type: 'ig', src: 'https://www.instagram.com/p/DWU9mESD_s_/embed', title: 'Clothing Brand Reel' }, { type: 'ig', src: 'https://www.instagram.com/p/DagVxgcydms/embed', title: 'Clothing Brand Reel' }], links: [{ label: 'Clothing Brand Reel', href: 'https://www.instagram.com/p/DWU9mESD_s_/' }, { label: 'Clothing Brand Reel', href: 'https://www.instagram.com/p/DagVxgcydms/' }] },
-  { phase: 'Reach', media: [{ type: 'yt', thumb: 'https://img.youtube.com/vi/ld4I4f8DILA/maxresdefault.jpg', href: 'https://www.youtube.com/watch?v=ld4I4f8DILA&t=16s', title: 'Farm Lovers Markets' }, { type: 'yt', thumb: 'https://img.youtube.com/vi/Yyh1HHAIAQY/maxresdefault.jpg', href: 'https://www.youtube.com/watch?v=Yyh1HHAIAQY&t=642s', title: 'Rigo' }, { type: 'yt', thumb: 'https://img.youtube.com/vi/A7YNhwUK1ds/maxresdefault.jpg', href: 'https://www.youtube.com/watch?v=A7YNhwUK1ds&t=230s', title: "Carl's OG3 Burger Shop" }, { type: 'yt', thumb: 'https://img.youtube.com/vi/N1z8_66Gvh4/maxresdefault.jpg', href: 'https://www.youtube.com/watch?v=N1z8_66Gvh4', title: 'Yung Chow — Red Light' }], links: [{ label: 'Farm Lovers Markets', href: 'https://www.youtube.com/watch?v=ld4I4f8DILA&t=16s' }, { label: 'Rigo', href: 'https://www.youtube.com/watch?v=Yyh1HHAIAQY&t=642s' }, { label: "Carl's OG3", href: 'https://www.youtube.com/watch?v=A7YNhwUK1ds&t=230s' }, { label: 'Yung Chow — Red Light', href: 'https://www.youtube.com/watch?v=N1z8_66Gvh4' }] },
-  { phase: 'Optimization', media: [{ type: 'ig', src: 'https://www.instagram.com/p/DaB-Pj2xpbx/embed', title: 'Supreme Dumplings Reel' }, { type: 'yt', thumb: 'https://img.youtube.com/vi/8rJSaUwmXxE/maxresdefault.jpg', href: 'https://www.youtube.com/watch?v=8rJSaUwmXxE&t=26s', title: 'MW Restaurant' }], links: [{ label: 'Short-form example', href: 'https://www.instagram.com/p/DaB-Pj2xpbx/' }, { label: 'Long-form example', href: 'https://www.youtube.com/watch?v=8rJSaUwmXxE&t=26s' }] },
+  { phase: 'Reach', media: [{ type: 'yt', videoId: 'ld4I4f8DILA', href: 'https://www.youtube.com/watch?v=ld4I4f8DILA&t=16s', title: 'Farm Lovers Markets' }, { type: 'yt', videoId: 'Yyh1HHAIAQY', href: 'https://www.youtube.com/watch?v=Yyh1HHAIAQY&t=642s', title: 'Rigo' }, { type: 'yt', videoId: 'A7YNhwUK1ds', href: 'https://www.youtube.com/watch?v=A7YNhwUK1ds&t=230s', title: "Carl's OG3 Burger Shop" }, { type: 'yt', videoId: 'N1z8_66Gvh4', href: 'https://www.youtube.com/watch?v=N1z8_66Gvh4', title: 'Yung Chow — Red Light' }], links: [{ label: 'Farm Lovers Markets', href: 'https://www.youtube.com/watch?v=ld4I4f8DILA&t=16s' }, { label: 'Rigo', href: 'https://www.youtube.com/watch?v=Yyh1HHAIAQY&t=642s' }, { label: "Carl's OG3", href: 'https://www.youtube.com/watch?v=A7YNhwUK1ds&t=230s' }, { label: 'Yung Chow — Red Light', href: 'https://www.youtube.com/watch?v=N1z8_66Gvh4' }] },
+  { phase: 'Optimization', media: [{ type: 'ig', src: 'https://www.instagram.com/p/DaB-Pj2xpbx/embed', title: 'Supreme Dumplings Reel' }, { type: 'yt', videoId: '8rJSaUwmXxE', href: 'https://www.youtube.com/watch?v=8rJSaUwmXxE&t=26s', title: 'MW Restaurant' }], links: [{ label: 'Short-form example', href: 'https://www.instagram.com/p/DaB-Pj2xpbx/' }, { label: 'Long-form example', href: 'https://www.youtube.com/watch?v=8rJSaUwmXxE&t=26s' }] },
 ];
 
 export default function Ecosystem() {
@@ -116,9 +117,9 @@ export default function Ecosystem() {
                       return (
                         <a key={j} href={m.href} target="_blank" rel="noopener" className="group relative block overflow-hidden rounded-2xl border border-border bg-muted">
                           <div className="relative aspect-video">
-                            <img src={m.thumb} alt={m.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-                            <div className="absolute inset-0 grid place-items-center bg-primary/30 transition-colors group-hover:bg-primary/20">
-                              <span className="grid h-12 w-12 place-items-center rounded-full bg-background/90 text-primary"><Play className="h-5 w-5 translate-x-0.5" fill="currentColor" /></span>
+                            <HoverVideo videoId={m.videoId} title={m.title} />
+                            <div className="pointer-events-none absolute inset-0 grid place-items-center bg-primary/30 transition-colors group-hover:bg-primary/20">
+                              <span className="pointer-events-none grid h-12 w-12 place-items-center rounded-full bg-background/90 text-primary"><Play className="h-5 w-5 translate-x-0.5" fill="currentColor" /></span>
                             </div>
                           </div>
                           <span className="absolute left-3 top-3 rounded-full bg-background/90 px-3 py-1 text-[11px] font-semibold text-primary">{m.title}</span>

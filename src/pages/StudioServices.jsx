@@ -5,21 +5,6 @@ import { EditableText, EditableIcon, Movable, LUCIDE } from '@/components/edit/E
 
 const SERVICES = [
   {
-    icon: 'Globe',
-    title: 'Web Design & Hosting',
-    sub: 'Websites built, launched, and maintained.',
-    body:
-      'From a single landing page to a full site, we design, build, and host your web presence — and handle domains and custom email setup so everything lives under one roof.',
-    included: [
-      'Custom web design',
-      'Responsive build',
-      'Hosting & SSL',
-      'Domain & custom email setup',
-      'Ongoing updates and maintenance',
-    ],
-    tags: ['Landing pages', 'Business sites', 'Portfolio sites', 'Maintenance'],
-  },
-  {
     icon: 'Camera',
     title: 'Photography',
     sub: 'Still images with a cinematic eye.',
@@ -33,21 +18,7 @@ const SERVICES = [
       'Same-day selects',
     ],
     tags: ['Product', 'Food', 'Headshots', 'Events'],
-  },
-  {
-    icon: 'Music2',
-    title: 'Custom Audio',
-    sub: 'Recording, voiceover, and sound design.',
-    body:
-      'Voiceover, podcast recording, music beds, and sound design — recorded, mixed, and delivered ready for any platform.',
-    included: [
-      'Voiceover recording',
-      'Podcast production',
-      'Music & sound design',
-      'Mixing & mastering',
-      'Format delivery for every platform',
-    ],
-    tags: ['Voiceover', 'Podcasts', 'Sound design', 'Mixing'],
+    img: null,
   },
   {
     icon: 'PenTool',
@@ -63,6 +34,39 @@ const SERVICES = [
       'Social templates',
     ],
     tags: ['Logos', 'Identity', 'Guidelines', 'Templates'],
+    img: null,
+  },
+  {
+    icon: 'Music2',
+    title: 'Custom Audio',
+    sub: 'Recording, voiceover, and sound design.',
+    body:
+      'Voiceover, podcast recording, music beds, and sound design — recorded, mixed, and delivered ready for any platform.',
+    included: [
+      'Voiceover recording',
+      'Podcast production',
+      'Music & sound design',
+      'Mixing & mastering',
+      'Format delivery for every platform',
+    ],
+    tags: ['Voiceover', 'Podcasts', 'Sound design', 'Mixing'],
+    img: null,
+  },
+  {
+    icon: 'Globe',
+    title: 'Web Design & Hosting',
+    sub: 'Websites built, launched, and maintained.',
+    body:
+      'From a single landing page to a full site, we design, build, and host your web presence — and handle domains and custom email setup so everything lives under one roof.',
+    included: [
+      'Custom web design',
+      'Responsive build',
+      'Hosting & SSL',
+      'Domain & custom email setup',
+      'Ongoing updates and maintenance',
+    ],
+    tags: ['Landing pages', 'Business sites', 'Portfolio sites', 'Maintenance'],
+    img: null,
   },
 ];
 
@@ -120,7 +124,8 @@ export default function StudioServices() {
                 <Movable key={i} id={`studio.svc.${i}`}>
                   <article className="flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card">
                     <div className="relative h-44 overflow-hidden bg-gradient-to-br from-primary to-primary/70">
-                      <Icon className="pointer-events-none absolute -bottom-6 -right-4 h-40 w-40 text-primary-foreground/10" />
+                      {s.img && <img src={s.img} alt="" className="absolute inset-0 h-full w-full object-cover ken-burns" loading="lazy" />}
+                      {!s.img && <Icon className="pointer-events-none absolute -bottom-6 -right-4 h-40 w-40 text-primary-foreground/10" />}
                       <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
                       <span className="absolute left-6 top-6 grid h-14 w-14 place-items-center rounded-2xl bg-background/90 text-primary">
                         <EditableIcon id={`studio.svc.${i}.icon`} as={Icon} iconClass="h-7 w-7" />

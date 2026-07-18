@@ -107,9 +107,8 @@ export default function Home() {
         <div className="container-wide flex flex-wrap items-center justify-center gap-x-8 gap-y-3 py-5 sm:justify-between">
           {TRUST.map((t, i) => (
             <React.Fragment key={i}>
-              <span className="inline-flex items-center gap-2">
-                <EditableIcon id={`home.trust.${i}.icon`} as={LUCIDE[t.icon]} iconClass="h-4 w-4" colorClass="text-accent" />
-                <EditableText id={`home.trust.${i}`} as="span" className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">{t.label}</EditableText>
+              <span className="inline-flex items-center" aria-label={t.label}>
+                <EditableIcon id={`home.trust.${i}.icon`} as={LUCIDE[t.icon]} iconClass="h-5 w-5" colorClass="text-accent" />
               </span>
               {i < TRUST.length - 1 && (
                 <ArrowRight className="h-4 w-4 text-accent/70 arrow-move" aria-hidden="true" />

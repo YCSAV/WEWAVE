@@ -384,9 +384,9 @@ export default function Home() {
             <EditableText id="home.about.p2" as="p" className="mt-4 text-lg leading-relaxed text-muted-foreground" block>
               Every idea, shoot, edit, and distribution decision is built around awareness, trust, customer action, and long-term growth.
             </EditableText>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {TEAM.map((m, i) => (
-                <div key={i} className="rounded-2xl border border-border bg-card p-5">
+                <div key={i} className="h-full flex flex-col rounded-2xl border border-border bg-card p-5">
                   <EditableText id={`home.about.team.${i}.n`} as="strong" className="block font-heading text-base font-bold text-primary" block>{m.name}</EditableText>
                   <EditableText id={`home.about.team.${i}.r`} as="span" className="text-xs font-semibold uppercase tracking-wide text-accent" block>{m.role}</EditableText>
                   <EditableText id={`home.about.team.${i}.d`} as="p" className="mt-2 text-sm leading-snug text-muted-foreground" block>{m.desc}</EditableText>

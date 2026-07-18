@@ -73,9 +73,10 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden">
-        <img src={HERO_BG} alt="" className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-25" loading="lazy" />
+        <img src={HERO_BG} alt="" className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-25 ken-burns" loading="lazy" />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/40" />
-        <div className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[520px] rounded-full bg-accent/10 blur-3xl" />
+        <div className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[520px] rounded-full bg-accent/10 blur-3xl bg-float" />
+        <div className="pointer-events-none absolute -bottom-32 left-[-8%] h-[420px] w-[420px] rounded-full bg-tropical/10 blur-3xl bg-float-slow" />
         <div className="relative container-wide grid items-center gap-12 py-14 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8">
           <div>
             <span className="eyebrow"><Sparkles className="h-3.5 w-3.5" />
@@ -139,7 +140,7 @@ export default function Home() {
             <Movable id="home.svc.video" className="lg:transform-none">
               <article className="flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card">
                 <div className="relative h-44 overflow-hidden">
-                  <img src={SVC_VIDEO_IMG} alt="" className="h-full w-full object-cover" loading="lazy" />
+                  <img src={SVC_VIDEO_IMG} alt="" className="h-full w-full object-cover ken-burns" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
                 </div>
                 <div className="flex flex-1 flex-col p-7 sm:p-9">
@@ -195,7 +196,7 @@ export default function Home() {
             <Movable id="home.svc.social">
               <article className="flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card">
                 <div className="relative h-44 overflow-hidden">
-                  <img src={SVC_SOCIAL_IMG} alt="" className="h-full w-full object-cover" loading="lazy" />
+                  <img src={SVC_SOCIAL_IMG} alt="" className="h-full w-full object-cover ken-burns-alt" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
                 </div>
                 <div className="flex flex-1 flex-col p-7 sm:p-9">
@@ -338,7 +339,7 @@ export default function Home() {
       <section id="about" className="relative overflow-hidden py-20 sm:py-28">
         <div className="container-wide grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <div className="relative overflow-hidden rounded-3xl border border-border">
-            <img src={ABOUT_IMG} alt="On-location production in Honolulu, Hawaiʻi" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+            <img src={ABOUT_IMG} alt="On-location production in Honolulu, Hawaiʻi" className="absolute inset-0 h-full w-full object-cover ken-burns" loading="lazy" />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/45 to-primary/15" />
             <div className="relative flex min-h-[440px] flex-col justify-end p-8 sm:p-10">
               <span className="eyebrow text-background/80"><EditableText id="home.about.eyebrow" as="span">About Us</EditableText></span>
@@ -350,7 +351,7 @@ export default function Home() {
                 <EditableText id="home.about.badge.s" as="span" className="text-sm text-background/80" block>Strategy. Production. Distribution. Optimization.</EditableText>
               </div>
               <div className="mt-4 flex items-center gap-2 text-sm text-background/80">
-                <svg viewBox="0 0 64 20" className="h-5 w-16 shrink-0 text-accent" fill="currentColor" aria-hidden="true">
+                <svg viewBox="0 0 64 20" className="h-5 w-16 shrink-0 text-accent bg-float-slow" fill="currentColor" aria-hidden="true">
                   <circle cx="4" cy="10" r="1.2" />
                   <circle cx="11" cy="9.5" r="2.6" />
                   <path d="M20 8.4q3.6-3 6.6.9 1 3-3.6 3-4 0-3-3.9z" />

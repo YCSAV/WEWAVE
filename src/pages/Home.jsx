@@ -75,8 +75,8 @@ export default function Home() {
       <section className="relative overflow-hidden">
         <img src={HERO_BG} alt="" className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-25 ken-burns" loading="lazy" />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/40" />
-        <div className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[520px] rounded-full bg-accent/10 blur-3xl bg-float" />
-        <div className="pointer-events-none absolute -bottom-32 left-[-8%] h-[420px] w-[420px] rounded-full bg-tropical/10 blur-3xl bg-float-slow" />
+        <div className="pointer-events-none absolute -top-40 right-[-10%] h-[560px] w-[560px] rounded-full bg-accent/20 blur-3xl bg-float" />
+        <div className="pointer-events-none absolute -bottom-32 left-[-8%] h-[460px] w-[460px] rounded-full bg-tropical/20 blur-3xl bg-float-slow" />
         <div className="relative container-wide grid items-center gap-12 py-14 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8">
           <div>
             <span className="eyebrow"><Sparkles className="h-3.5 w-3.5" />

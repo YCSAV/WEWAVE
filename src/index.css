@@ -108,22 +108,22 @@
   }
   .dist-icon svg { width: 22px; height: 22px; display: block; }
 
-@keyframes bg-float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
-.bg-float { animation: bg-float 8s ease-in-out infinite; }
-@keyframes bg-float-slow { 0%,100%{transform:translateY(0)} 50%{transform:translateY(10px)} }
-.bg-float-slow { animation: bg-float-slow 11s ease-in-out infinite; }
+@keyframes bg-float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-26px)} }
+.bg-float { animation: bg-float 7s ease-in-out infinite; }
+@keyframes bg-float-slow { 0%,100%{transform:translateY(0)} 50%{transform:translateY(22px)} }
+.bg-float-slow { animation: bg-float-slow 9s ease-in-out infinite; }
 
 @keyframes ken-burns {
   0%, 100% { transform: scale(1) translate3d(0, 0, 0); }
-  50% { transform: scale(1.08) translate3d(-1.5%, -1%, 0); }
+  50% { transform: scale(1.14) translate3d(-2.5%, -1.5%, 0); }
 }
-.ken-burns { animation: ken-burns 26s ease-in-out infinite; will-change: transform; }
+.ken-burns { animation: ken-burns 18s ease-in-out infinite; will-change: transform; }
 
 @keyframes ken-burns-alt {
-  0%, 100% { transform: scale(1.06) translate3d(1.5%, 1%, 0); }
-  50% { transform: scale(1) translate3d(-1%, -1.5%, 0); }
+  0%, 100% { transform: scale(1.12) translate3d(2.5%, 1.5%, 0); }
+  50% { transform: scale(1) translate3d(-1.5%, -2%, 0); }
 }
-.ken-burns-alt { animation: ken-burns-alt 32s ease-in-out infinite; will-change: transform; }
+.ken-burns-alt { animation: ken-burns-alt 22s ease-in-out infinite; will-change: transform; }
 }
 
 @keyframes flow-dash {

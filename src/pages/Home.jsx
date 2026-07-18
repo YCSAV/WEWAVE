@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Clapperboard, Share2, Lightbulb, Camera, SlidersHorizontal, ArrowUpRight, Sparkles, Play, ArrowRight, Phone, Mail, Eye,
+  Clapperboard, Share2, Lightbulb, Camera, SlidersHorizontal, ArrowUpRight, Sparkles, Play, ArrowRight, Phone, Mail, Eye, Plane,
 } from 'lucide-react';
 import GrowthEngine from '@/components/GrowthEngine';
 import HoverVideo from '@/components/HoverVideo';
@@ -372,7 +372,14 @@ export default function Home() {
                 </svg>
                 <EditableText id="home.about.loc" as="span">Based in Honolulu, Hawaiʻi</EditableText>
               </div>
-              <span className="pointer-events-none mt-3 font-heading text-[88px] font-extrabold leading-none tracking-tighter text-background/15">808</span>
+              <div className="mt-1.5 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+                <Plane className="h-3.5 w-3.5 -rotate-45" />
+                <EditableText id="home.about.passport" as="span">Passport ready — we travel to you</EditableText>
+              </div>
+              <div className="pointer-events-none mt-3 flex items-end gap-3">
+                <span className="font-heading text-[88px] font-extrabold leading-none tracking-tighter text-background/15">808</span>
+                <Plane className="mb-2 h-10 w-10 text-background/15" />
+              </div>
             </div>
           </div>
 

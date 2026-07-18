@@ -17,7 +17,7 @@ const EXAMPLES = [
     phase: 'Growth',
     media: [
       { type: 'ig', src: 'https://www.instagram.com/p/DWU9mESD_s_/embed', title: 'Clothing Brand Reel', desc: 'Vertical brand reel for a clothing label.' },
-      { type: 'ig', src: 'https://www.instagram.com/p/DS-vambEiIt/embed', title: 'Instagram Reel', desc: 'Short-form vertical content built for social discovery.' },
+      { type: 'ig', src: 'https://www.instagram.com/reel/DS-vambEiIt/embed', title: 'Instagram Reel', desc: 'Short-form vertical content built for social discovery.' },
       { type: 'ig', src: 'https://www.instagram.com/p/DagVxgcydms/embed', title: 'Clothing Brand Reel', desc: 'Second vertical reel in the Growth series.' },
     ],
   },
@@ -35,8 +35,8 @@ const EXAMPLES = [
     phase: 'Optimization',
     media: [
       { type: 'ig', src: 'https://www.instagram.com/p/DaB-Pj2xpbx/embed', title: 'Supreme Dumplings Reel', desc: 'Vertical dumplings reel for short-form discovery.' },
-      { type: 'yt', videoId: '8rJSaUwmXxE', href: 'https://www.youtube.com/watch?v=8rJSaUwmXxE&t=26s', title: 'MW Restaurant', desc: 'Cinematic restaurant story for long-form trust.' },
       { type: 'ig', src: 'https://www.instagram.com/p/DYjIuzFR-0-/embed', title: 'Instagram Reel', desc: 'Cross-platform short-form reel.' },
+      { type: 'yt', videoId: '8rJSaUwmXxE', href: 'https://www.youtube.com/watch?v=8rJSaUwmXxE&t=26s', title: 'MW Restaurant', desc: 'Cinematic restaurant story for long-form trust.' },
     ],
   },
 ];

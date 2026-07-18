@@ -141,3 +141,40 @@
 .movable-outline { outline: 1px dashed hsl(var(--primary) / 0.4); outline-offset: 6px; border-radius: 10px; }
 .dragging { z-index: 50; box-shadow: 0 14px 38px rgba(0,0,0,.18); opacity: .92; }
 [contenteditable="true"] { cursor: text; }
+
+/* ===== Mobile-native enhancements (additive) ===== */
+html, body {
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+:root {
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+}
+
+.safe-pt { padding-top: max(1rem, env(safe-area-inset-top)); }
+.safe-pb { padding-bottom: max(1rem, env(safe-area-inset-bottom)); }
+.safe-px { padding-left: max(1rem, env(safe-area-inset-left)); padding-right: max(1rem, env(safe-area-inset-right)); }
+.safe-mb { margin-bottom: env(safe-area-inset-bottom, 0px); }
+
+/* Native-like: disable text selection / callout on chrome, keep editable content selectable */
+button, nav, header, footer, [role="tab"], [role="button"], .dist-icon, .mobile-tab, [data-no-select] {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+[contenteditable="true"] { -webkit-user-select: text; user-select: text; }
+
+/* Push/pop page transition on navigation */
+@keyframes page-push {
+  from { opacity: 0; transform: translateX(14px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.page-transition { animation: page-push 0.28s ease-out; }
+@media (prefers-reduced-motion: reduce) {
+  .page-transition { animation: none; }
+}

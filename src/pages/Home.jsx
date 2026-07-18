@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Clapperboard, Share2, Lightbulb, Camera, SlidersHorizontal, ArrowUpRight, Sparkles, Play, ArrowRight, Phone, Mail,
+  Clapperboard, Share2, Lightbulb, Camera, SlidersHorizontal, ArrowUpRight, Sparkles, Play, ArrowRight, Phone, Mail, Eye,
 } from 'lucide-react';
 import GrowthEngine from '@/components/GrowthEngine';
 import HoverVideo from '@/components/HoverVideo';
+import { useYoutubeStats } from '@/hooks/useYoutubeStats';
 import { EditableText, EditableIcon, Movable, LUCIDE } from '@/components/edit/Editable';
 import { BRAND_MARKUP } from '@/components/BrandIcons';
 
@@ -69,6 +70,7 @@ const STATS = [
 ];
 
 export default function Home() {
+  const { stats: ytStats } = useYoutubeStats(WORK.map((w) => w.videoId));
   return (
     <>
       {/* Hero */}
@@ -305,7 +307,15 @@ export default function Home() {
                     <EditableText id={`home.work.${i}.tag`} as="span" className="text-[11px] font-semibold uppercase tracking-[0.16em] text-background/80">{w.tag}</EditableText>
                     <h3 className="mt-1 font-heading text-2xl font-bold"><EditableText id={`home.work.${i}.t`} as="span">{w.title}</EditableText></h3>
                     <EditableText id={`home.work.${i}.d`} as="p" className="mt-1 max-w-md text-sm text-background/85" block>{w.desc}</EditableText>
-                    <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-accent">Watch on YouTube <ArrowUpRight className="h-4 w-4" /></span>
+                    <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1">
+                      <span className="inline-flex items-center gap-1 text-sm font-semibold text-accent">Watch on YouTube <ArrowUpRight className="h-4 w-4" /></span>
+                      {ytStats[w.videoId]?.viewCount != null && (
+                        <span className="inline-flex items-center gap-1.5 text-xs font-medium text-background/70">
+                          <Eye className="h-3.5 w-3.5" />
+                          {ytStats[w.videoId].viewCount.toLocaleString()} views
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </a>
               </Movable>

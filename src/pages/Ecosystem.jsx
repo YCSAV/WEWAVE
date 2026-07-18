@@ -17,7 +17,6 @@ const EXAMPLES = [
     phase: 'Growth',
     media: [
       { type: 'ig', src: 'https://www.instagram.com/p/DWU9mESD_s_/embed', title: 'Clothing Brand Reel', desc: 'Vertical brand reel for a clothing label.' },
-      { type: 'ig', src: 'https://www.instagram.com/p/DS-vambEiIt/embed', title: 'Instagram Reel', desc: 'Short-form vertical content built for social discovery.' },
       { type: 'ig', src: 'https://www.instagram.com/p/DagVxgcydms/embed', title: 'Clothing Brand Reel', desc: 'Second vertical reel in the Growth series.' },
     ],
   },

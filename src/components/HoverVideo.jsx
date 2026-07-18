@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 export default function HoverVideo({ videoId, title, className }) {
   const [playing, setPlaying] = useState(false);
-  const embed = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&playsinline=1&loop=1&playlist=${videoId}`;
+  const embed = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&rel=0&playsinline=1&loop=1&playlist=${videoId}`;
 
   return (
     <div

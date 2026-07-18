@@ -13,9 +13,32 @@ const PHASES = [
 ];
 
 const EXAMPLES = [
-  { phase: 'Growth', media: [{ type: 'ig', src: 'https://www.instagram.com/p/DWU9mESD_s_/embed', title: 'Clothing Brand Reel' }, { type: 'ig', src: 'https://www.instagram.com/p/DagVxgcydms/embed', title: 'Clothing Brand Reel' }], links: [{ label: 'Clothing Brand Reel', href: 'https://www.instagram.com/p/DWU9mESD_s_/' }, { label: 'Clothing Brand Reel', href: 'https://www.instagram.com/p/DagVxgcydms/' }] },
-  { phase: 'Reach', media: [{ type: 'yt', videoId: 'ld4I4f8DILA', href: 'https://www.youtube.com/watch?v=ld4I4f8DILA&t=16s', title: 'Farm Lovers Markets' }, { type: 'yt', videoId: 'Yyh1HHAIAQY', href: 'https://www.youtube.com/watch?v=Yyh1HHAIAQY&t=642s', title: 'Rigo' }, { type: 'yt', videoId: 'A7YNhwUK1ds', href: 'https://www.youtube.com/watch?v=A7YNhwUK1ds&t=230s', title: "Carl's OG3 Burger Shop" }, { type: 'yt', videoId: 'N1z8_66Gvh4', href: 'https://www.youtube.com/watch?v=N1z8_66Gvh4', title: 'Yung Chow — Red Light' }, { type: 'yt', videoId: 'JNcgShibW7k', href: 'https://www.youtube.com/watch?v=JNcgShibW7k', title: 'Yung Chow & Chase — Smoked Out' }], links: [{ label: 'Farm Lovers Markets', href: 'https://www.youtube.com/watch?v=ld4I4f8DILA&t=16s' }, { label: 'Rigo', href: 'https://www.youtube.com/watch?v=Yyh1HHAIAQY&t=642s' }, { label: "Carl's OG3", href: 'https://www.youtube.com/watch?v=A7YNhwUK1ds&t=230s' }, { label: 'Yung Chow — Red Light', href: 'https://www.youtube.com/watch?v=N1z8_66Gvh4' }, { label: 'Smoked Out — Yung Chow & Chase', href: 'https://www.youtube.com/watch?v=JNcgShibW7k' }] },
-  { phase: 'Optimization', media: [{ type: 'ig', src: 'https://www.instagram.com/p/DaB-Pj2xpbx/embed', title: 'Supreme Dumplings Reel' }, { type: 'yt', videoId: '8rJSaUwmXxE', href: 'https://www.youtube.com/watch?v=8rJSaUwmXxE&t=26s', title: 'MW Restaurant' }, { type: 'ig', src: 'https://www.instagram.com/p/DYjIuzFR-0-/embed', title: 'Instagram Reel' }], links: [{ label: 'Short-form example', href: 'https://www.instagram.com/p/DaB-Pj2xpbx/' }, { label: 'Long-form example', href: 'https://www.youtube.com/watch?v=8rJSaUwmXxE&t=26s' }, { label: 'Short-form reel', href: 'https://www.instagram.com/p/DYjIuzFR-0-/' }] },
+  {
+    phase: 'Growth',
+    media: [
+      { type: 'ig', src: 'https://www.instagram.com/p/DWU9mESD_s_/embed', title: 'Clothing Brand Reel', desc: 'Vertical brand reel for a clothing label.' },
+      { type: 'ig', src: 'https://www.instagram.com/p/DS-vambEiIt/embed', title: 'Instagram Reel', desc: 'Short-form vertical content built for social discovery.' },
+      { type: 'ig', src: 'https://www.instagram.com/p/DagVxgcydms/embed', title: 'Clothing Brand Reel', desc: 'Second vertical reel in the Growth series.' },
+    ],
+  },
+  {
+    phase: 'Reach',
+    media: [
+      { type: 'yt', videoId: 'ld4I4f8DILA', href: 'https://www.youtube.com/watch?v=ld4I4f8DILA&t=16s', title: 'Farm Lovers Markets', desc: 'Cinematic market story — vendors, food, and culture.' },
+      { type: 'yt', videoId: 'Yyh1HHAIAQY', href: 'https://www.youtube.com/watch?v=Yyh1HHAIAQY&t=642s', title: 'Rigo', desc: 'Atmospheric restaurant feature film.' },
+      { type: 'yt', videoId: 'A7YNhwUK1ds', href: 'https://www.youtube.com/watch?v=A7YNhwUK1ds&t=230s', title: "Carl's OG3 Burger Shop", desc: 'Long-form burger shop feature.' },
+      { type: 'yt', videoId: 'N1z8_66Gvh4', href: 'https://www.youtube.com/watch?v=N1z8_66Gvh4', title: 'Yung Chow — Red Light', desc: 'Music-driven short documentary.' },
+      { type: 'yt', videoId: 'JNcgShibW7k', href: 'https://www.youtube.com/watch?v=JNcgShibW7k', title: 'Yung Chow & Chase — Smoked Out', desc: 'Performance and lifestyle long-form.' },
+    ],
+  },
+  {
+    phase: 'Optimization',
+    media: [
+      { type: 'ig', src: 'https://www.instagram.com/p/DaB-Pj2xpbx/embed', title: 'Supreme Dumplings Reel', desc: 'Vertical dumplings reel for short-form discovery.' },
+      { type: 'yt', videoId: '8rJSaUwmXxE', href: 'https://www.youtube.com/watch?v=8rJSaUwmXxE&t=26s', title: 'MW Restaurant', desc: 'Cinematic restaurant story for long-form trust.' },
+      { type: 'ig', src: 'https://www.instagram.com/p/DYjIuzFR-0-/embed', title: 'Instagram Reel', desc: 'Cross-platform short-form reel.' },
+    ],
+  },
 ];
 
 export default function Ecosystem() {
@@ -114,39 +137,35 @@ export default function Ecosystem() {
             {EXAMPLES.map((ex, i) => (
               <div key={i} className="flex flex-col">
                 <h3 className="font-heading text-xl font-bold text-primary"><EditableText id={`eco.ex.${i}.t`} as="span">{ex.phase}</EditableText></h3>
-                <div className="mt-4 space-y-4">
+                <div className="mt-4 space-y-5">
                   {ex.media.map((m, j) => {
-                    if (m.type === 'yt') {
-                      return (
-                        <a key={j} href={m.href} target="_blank" rel="noopener" className="group relative block overflow-hidden rounded-2xl border border-border bg-muted">
-                          <div className="relative aspect-video">
-                            <HoverVideo videoId={m.videoId} title={m.title} />
-                            <div className="pointer-events-none absolute inset-0 grid place-items-center bg-primary/30 transition-colors group-hover:bg-primary/20">
-                              <span className="pointer-events-none grid h-12 w-12 place-items-center rounded-full bg-background/90 text-primary"><Play className="h-5 w-5 translate-x-0.5" fill="currentColor" /></span>
-                            </div>
+                    const tile = m.type === 'yt' ? (
+                      <a href={m.href} target="_blank" rel="noopener" className="group relative block overflow-hidden rounded-2xl border border-border bg-muted">
+                        <div className="relative aspect-video">
+                          <HoverVideo videoId={m.videoId} title={m.title} />
+                          <div className="pointer-events-none absolute inset-0 grid place-items-center bg-primary/30 transition-colors group-hover:bg-primary/20">
+                            <span className="pointer-events-none grid h-12 w-12 place-items-center rounded-full bg-background/90 text-primary"><Play className="h-5 w-5 translate-x-0.5" fill="currentColor" /></span>
                           </div>
-                          <span className="absolute left-3 top-3 rounded-full bg-background/90 px-3 py-1 text-[11px] font-semibold text-primary">{m.title}</span>
-                          {ytStats[m.videoId]?.viewCount != null && (
-                            <span className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-full bg-background/90 px-2.5 py-1 text-[11px] font-semibold text-primary">
-                              <Eye className="h-3 w-3" /> {ytStats[m.videoId].viewCount.toLocaleString()} views
-                            </span>
-                          )}
-                        </a>
-                      );
-                    }
-                    return (
-                      <div key={j} className="overflow-hidden rounded-2xl border border-border bg-card" style={{ aspectRatio: '9 / 16', maxHeight: 520 }}>
+                        </div>
+                        <span className="absolute left-3 top-3 rounded-full bg-background/90 px-3 py-1 text-[11px] font-semibold text-primary">{m.title}</span>
+                        {ytStats[m.videoId]?.viewCount != null && (
+                          <span className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-full bg-background/90 px-2.5 py-1 text-[11px] font-semibold text-primary">
+                            <Eye className="h-3 w-3" /> {ytStats[m.videoId].viewCount.toLocaleString()} views
+                          </span>
+                        )}
+                      </a>
+                    ) : (
+                      <div className="overflow-hidden rounded-2xl border border-border bg-card" style={{ aspectRatio: '9 / 16', maxHeight: 520 }}>
                         <iframe src={m.src} title={m.title} className="h-full w-full" loading="lazy" scrolling="no" frameBorder="0" />
                       </div>
                     );
+                    return (
+                      <div key={j}>
+                        {tile}
+                        <EditableText id={`eco.ex.${i}.media.${j}.desc`} as="p" className="mt-2 text-xs leading-snug text-muted-foreground" block>{m.desc}</EditableText>
+                      </div>
+                    );
                   })}
-                </div>
-                <div className="mt-4 flex flex-col gap-1.5">
-                  {ex.links.map((l, j) => (
-                    <a key={j} href={l.href} target="_blank" rel="noopener" className="inline-flex items-center gap-1 text-sm font-semibold text-accent hover:text-primary">
-                      <EditableText id={`eco.ex.${i}.link.${j}`} as="span">{l.label}</EditableText> <ArrowUpRight className="h-4 w-4" />
-                    </a>
-                  ))}
                 </div>
               </div>
             ))}

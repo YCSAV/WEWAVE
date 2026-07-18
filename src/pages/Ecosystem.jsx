@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, Sprout, Radio, Gauge, Play, Smartphone, Tv } from 'lucide-react';
+import { ArrowUpRight, Sprout, Radio, Gauge, Play, Smartphone, Tv, Eye } from 'lucide-react';
 import { EditableText, Movable } from '@/components/edit/Editable';
 import { BRAND_MARKUP } from '@/components/BrandIcons';
 import HoverVideo from '@/components/HoverVideo';
+import { useYoutubeStats } from '@/hooks/useYoutubeStats';
 
 const PHASES = [
   { no: '01', icon: Sprout, devices: [Smartphone], title: 'Growth', desc: 'Build a consistent vertical presence through premium short-form content and managed social distribution.', items: ['2–4 short-form videos per month', 'Instagram + TikTok distribution', 'Meta advertising support', 'One half-day shoot per month'] },
@@ -18,6 +19,8 @@ const EXAMPLES = [
 ];
 
 export default function Ecosystem() {
+  const ytIds = EXAMPLES.flatMap((ex) => ex.media.filter((m) => m.type === 'yt').map((m) => m.videoId));
+  const { stats: ytStats } = useYoutubeStats(ytIds);
   return (
     <>
       <section className="relative overflow-hidden border-b border-border bg-secondary/30">
@@ -123,6 +126,11 @@ export default function Ecosystem() {
                             </div>
                           </div>
                           <span className="absolute left-3 top-3 rounded-full bg-background/90 px-3 py-1 text-[11px] font-semibold text-primary">{m.title}</span>
+                          {ytStats[m.videoId]?.viewCount != null && (
+                            <span className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-full bg-background/90 px-2.5 py-1 text-[11px] font-semibold text-primary">
+                              <Eye className="h-3 w-3" /> {ytStats[m.videoId].viewCount.toLocaleString()} views
+                            </span>
+                          )}
                         </a>
                       );
                     }

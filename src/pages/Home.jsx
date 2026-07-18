@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Clapperboard, Share2, Lightbulb, Camera, SlidersHorizontal, ArrowUpRight, Sparkles, Play, ArrowRight, Phone, Mail, Eye, Plane,
+  Clapperboard, Share2, Lightbulb, Camera, SlidersHorizontal, ArrowUpRight, Sparkles, Play, ArrowRight, Phone, Mail, Eye, Plane, MapPin,
 } from 'lucide-react';
 import GrowthEngine from '@/components/GrowthEngine';
 import HoverVideo from '@/components/HoverVideo';
@@ -360,25 +360,19 @@ export default function Home() {
                 <EditableText id="home.about.badge.t" as="strong" className="block font-heading font-bold text-background" block>One integrated team.</EditableText>
                 <EditableText id="home.about.badge.s" as="span" className="text-sm text-background/80" block>Strategy. Production. Distribution. Optimization.</EditableText>
               </div>
-              <div className="mt-4 flex items-center gap-2 text-sm text-background/80">
-                <svg viewBox="0 0 64 20" className="h-5 w-16 shrink-0 text-accent bg-float-slow" fill="currentColor" aria-hidden="true">
-                  <circle cx="4" cy="10" r="1.2" />
-                  <circle cx="11" cy="9.5" r="2.6" />
-                  <path d="M20 8.4q3.6-3 6.6.9 1 3-3.6 3-4 0-3-3.9z" />
-                  <circle cx="33" cy="11" r="1.7" />
-                  <circle cx="38" cy="10.5" r="1.4" />
-                  <path d="M43.5 9q3.2-4.6 6.6-.1.8 3-3 2.6-4 0-3.6-2.5z" />
-                  <ellipse cx="57" cy="11" rx="6.5" ry="5.4" />
-                </svg>
-                <EditableText id="home.about.loc" as="span">Based in Honolulu, Hawaiʻi</EditableText>
-              </div>
-              <div className="mt-1.5 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-                <Plane className="h-3.5 w-3.5 -rotate-45" />
-                <EditableText id="home.about.passport" as="span">Passport ready — we travel to you</EditableText>
-              </div>
-              <div className="pointer-events-none mt-3 flex items-end gap-3">
-                <span className="font-heading text-[88px] font-extrabold leading-none tracking-tighter text-background/15">808</span>
-                <Plane className="mb-2 h-10 w-10 text-background/15" />
+              <div className="mt-6">
+                <div className="flex items-center gap-2 text-sm font-medium text-background/85">
+                  <MapPin className="h-4 w-4 text-accent" />
+                  <EditableText id="home.about.loc" as="span">Based in Honolulu, Hawaiʻi</EditableText>
+                </div>
+                <div className="mt-1.5 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+                  <Plane className="h-3.5 w-3.5 -rotate-45" />
+                  <EditableText id="home.about.passport" as="span">Passport ready — we travel to you</EditableText>
+                </div>
+                <div className="pointer-events-none mt-2 flex items-end gap-3">
+                  <span className="font-heading text-[80px] font-extrabold leading-none tracking-tighter text-background/20">808</span>
+                  <Plane className="mb-1.5 h-8 w-8 -rotate-45 text-background/20" />
+                </div>
               </div>
             </div>
           </div>

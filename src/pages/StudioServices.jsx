@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, Globe, Camera, Music2, PenTool, Sparkles } from 'lucide-react';
+import { ArrowUpRight, Globe, Camera, Music2, PenTool, Sparkles, Check } from 'lucide-react';
 import { EditableText, EditableIcon, Movable, LUCIDE } from '@/components/edit/Editable';
 
 const SERVICES = [
@@ -73,6 +73,8 @@ const SERVICES = [
 const MORE = [
   'Drone & aerial',
   'Live streaming',
+  'Music videos',
+  'Artist & label content',
   'Motion graphics',
   'Color grading',
   'Event coverage',
@@ -100,6 +102,10 @@ export default function StudioServices() {
           <EditableText id="studio.hero.sub" as="p" className="mx-auto mt-5 max-w-2xl text-lg text-muted-foreground" block>
             Beyond content and social, our cameras, studio, and recording gear handle the rest — web design, photography, custom audio, branding, and more.
           </EditableText>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-2.5">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-primary"><Check className="h-4 w-4 text-accent" /> Corporate & commercial</span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-primary"><Check className="h-4 w-4 text-accent" /> Artists & music videos</span>
+          </div>
         </div>
       </section>
 
@@ -140,7 +146,7 @@ export default function StudioServices() {
                       <ul className="mt-3 grid gap-2.5 sm:grid-cols-2">
                         {s.included.map((it, j) => (
                           <li key={j} className="flex items-start gap-2.5 text-sm text-foreground">
-                            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                            <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
                             <EditableText id={`studio.svc.${i}.item.${j}`} as="span" block>{it}</EditableText>
                           </li>
                         ))}
@@ -162,7 +168,7 @@ export default function StudioServices() {
           <div className="mt-14 rounded-3xl border border-border bg-secondary/40 p-7 sm:p-9">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
               <h3 className="font-heading text-xl font-bold text-primary"><EditableText id="studio.more.t" as="span">More from the studio</EditableText></h3>
-              <EditableText id="studio.more.sub" as="p" className="text-sm text-muted-foreground" block>If a camera, mic, or computer can do it, we probably can too — just ask.</EditableText>
+              <EditableText id="studio.more.sub" as="p" className="text-sm text-muted-foreground" block>If a camera, mic, or computer can do it, we probably can too — just ask. And if we can’t do it, we’ll connect you to the right people at no cost.</EditableText>
             </div>
             <div className="mt-5 flex flex-wrap gap-2.5">
               {MORE.map((m, i) => (

@@ -17,7 +17,7 @@ const EXAMPLES = [
     phase: 'Growth',
     media: [
       { type: 'ig', src: 'https://www.instagram.com/p/DWU9mESD_s_/embed', title: 'Clothing Brand Reel', desc: 'Vertical brand reel for a clothing label.' },
-      { type: 'ig', src: 'https://www.instagram.com/p/DS-vambEiIt/embed', title: 'Instagram Reel', desc: 'Short-form vertical content built for social discovery.', cover: true },
+      { type: 'ig', src: 'https://www.instagram.com/p/DS-vambEiIt/embed', title: 'Instagram Reel', desc: 'Short-form vertical content built for social discovery.' },
       { type: 'ig', src: 'https://www.instagram.com/p/DagVxgcydms/embed', title: 'Clothing Brand Reel', desc: 'Second vertical reel in the Growth series.' },
     ],
   },
@@ -155,8 +155,8 @@ export default function Ecosystem() {
                         )}
                       </a>
                     ) : (
-                      <div className="relative overflow-hidden rounded-2xl border border-border bg-card" style={{ aspectRatio: '9 / 16', maxHeight: 520 }}>
-                        <iframe src={m.src} title={m.title} className="h-full w-full" loading="lazy" scrolling="no" frameBorder="0" style={m.cover ? { transform: 'scale(1.7)', transformOrigin: 'center' } : undefined} />
+                      <div className="overflow-hidden rounded-2xl border border-border bg-card" style={{ aspectRatio: '9 / 16', maxHeight: 520 }}>
+                        <iframe src={m.src} title={m.title} className="h-full w-full" loading="lazy" scrolling="no" frameBorder="0" />
                       </div>
                     );
                     return (

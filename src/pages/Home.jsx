@@ -4,7 +4,6 @@ import {
   Clapperboard, Share2, Lightbulb, Camera, SlidersHorizontal, ArrowUpRight, Sparkles, Play, ArrowRight, Phone, Mail,
 } from 'lucide-react';
 import GrowthEngine from '@/components/GrowthEngine';
-import HoverVideo from '@/components/HoverVideo';
 import { EditableText, EditableIcon, Movable, LUCIDE } from '@/components/edit/Editable';
 import { BRAND_MARKUP } from '@/components/BrandIcons';
 
@@ -44,8 +43,8 @@ const OPTIMIZATION = [
 ];
 
 const WORK = [
-  { title: 'Farm Lovers Markets', tag: 'Long-form brand story', desc: 'Food, vendors, community, and culture shaped into a watchable market experience.', videoId: 'ld4I4f8DILA', href: 'https://www.youtube.com/watch?v=ld4I4f8DILA&t=16s' },
-  { title: 'Rigo', tag: 'Restaurant feature', desc: 'A cinematic restaurant story built around atmosphere, food, and personality.', videoId: 'Yyh1HHAIAQY', href: 'https://www.youtube.com/watch?v=Yyh1HHAIAQY&t=642s' },
+  { title: 'Farm Lovers Markets', tag: 'Long-form brand story', desc: 'Food, vendors, community, and culture shaped into a watchable market experience.', thumb: 'https://img.youtube.com/vi/ld4I4f8DILA/maxresdefault.jpg', href: 'https://www.youtube.com/watch?v=ld4I4f8DILA&t=16s' },
+  { title: 'Rigo', tag: 'Restaurant feature', desc: 'A cinematic restaurant story built around atmosphere, food, and personality.', thumb: 'https://img.youtube.com/vi/Yyh1HHAIAQY/maxresdefault.jpg', href: 'https://www.youtube.com/watch?v=Yyh1HHAIAQY&t=642s' },
 ];
 
 const TEAM = [
@@ -294,9 +293,9 @@ export default function Home() {
               <Movable key={i} id={`home.work.${i}`}>
                 <a href={w.href} target="_blank" rel="noopener" className="group relative block overflow-hidden rounded-3xl border border-border">
                   <div className="relative aspect-[16/10] overflow-hidden bg-muted">
-                    <HoverVideo videoId={w.videoId} title={w.title} />
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/15 to-transparent" />
-                    <span className="pointer-events-none absolute left-5 top-5 grid h-12 w-12 place-items-center rounded-full bg-background/90 text-primary backdrop-blur-sm transition-transform group-hover:scale-110">
+                    <img src={w.thumb} alt={w.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/15 to-transparent" />
+                    <span className="absolute left-5 top-5 grid h-12 w-12 place-items-center rounded-full bg-background/90 text-primary backdrop-blur-sm transition-transform group-hover:scale-110">
                       <Play className="h-5 w-5 translate-x-0.5" fill="currentColor" />
                     </span>
                   </div>

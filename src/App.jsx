@@ -10,6 +10,7 @@ import ScrollToTop from './components/ScrollToTop';
 import Layout from '@/components/Layout';
 import Home from '@/pages/Home';
 import Ecosystem from '@/pages/Ecosystem';
+import StudioServices from '@/pages/StudioServices';
 import About from '@/pages/About';
 import Contact from '@/pages/Contact';
 
@@ -43,6 +44,7 @@ const AuthenticatedApp = () => {
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/ecosystem" element={<Ecosystem />} />
+        <Route path="/studio-services" element={<StudioServices />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Route>

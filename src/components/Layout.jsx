@@ -12,6 +12,7 @@ const BRAND_LOGO = 'https://media.base44.com/images/public/6a5a1601b834ac73c4093
 const NAV = [
   { label: 'Home', to: '/' },
   { label: 'Smart Ecosystem', to: '/ecosystem' },
+  { label: 'Studio Services', to: '/studio-services' },
   { label: 'About Us', to: '/about' },
   { label: 'Contact Us', to: '/contact' },
 ];

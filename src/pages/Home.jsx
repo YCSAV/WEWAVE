@@ -19,7 +19,7 @@ const TRUST = [
 
 const PLAN_STEPS = [
   { icon: 'PenTool', title: 'Creative Direction', desc: 'Concepts shaped around your brand.' },
-  { icon: 'MessageCircle', title: 'Customer Feedback', desc: 'Insights from your audience.' },
+  { icon: 'MessageCircle', title: 'Client Input', desc: 'Client insights guide the direction.' },
   { icon: 'Layers', title: 'Storyboarding', desc: 'Shots planned before we roll.' },
 ];
 

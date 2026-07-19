@@ -13,6 +13,7 @@ export default function HoverReel({ src, title, className }) {
         allow="autoplay; encrypted-media"
         loading="lazy"
       />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[32px] bg-white" />
     </div>
   );
 }

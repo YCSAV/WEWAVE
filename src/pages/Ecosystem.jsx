@@ -7,14 +7,14 @@ import HoverVideo from '@/components/HoverVideo';
 import { useYoutubeStats } from '@/hooks/useYoutubeStats';
 
 const PHASES = [
-  { no: '01', icon: Sprout, devices: [Smartphone], title: 'Growth', desc: 'Build a consistent vertical presence through premium short-form content and managed social distribution.', items: ['2–4 short-form videos per month', 'Instagram + TikTok distribution', 'Meta advertising support', 'One half-day shoot per month'] },
+  { no: '01', icon: Sprout, devices: [Smartphone], title: 'Grow', desc: 'Build a consistent vertical presence through premium short-form content and managed social distribution.', items: ['2–4 short-form videos per month', 'Instagram + TikTok distribution', 'Meta advertising support', 'One half-day shoot per month'] },
   { no: '02', icon: Radio, devices: [Tv], title: 'Reach', desc: 'Add cinematic medium- and long-form storytelling that builds authority, context, and trust.', items: ['2–4 medium-form videos or one long-form video', 'YouTube distribution and management', 'Google advertising and insights', 'One full-day shoot per month'] },
   { no: '03', icon: Gauge, devices: [Smartphone, Tv], title: 'Optimization', desc: 'Connect short-form discovery and long-form trust into one complete content engine.', items: ['2–4 short-form videos', '2–4 medium-form videos or one long-form video', 'All-platform distribution and management', 'Google + Meta advertising and insights', 'Two shoot days per month'] },
 ];
 
 const EXAMPLES = [
   {
-    phase: 'Growth',
+    phase: 'Grow',
     media: [
       { type: 'ig', src: 'https://www.instagram.com/p/DWU9mESD_s_/embed', title: 'Clothing Brand Reel', desc: 'Vertical brand reel for a clothing label.' },
       { type: 'ig', src: 'https://www.instagram.com/p/DagVxgcydms/embed', title: 'Clothing Brand Reel', desc: 'Second vertical reel in the Growth series.' },
@@ -50,7 +50,7 @@ export default function Ecosystem() {
         <div className="container-wide py-16 text-center sm:py-24">
           <span className="eyebrow justify-center"><EditableText id="eco.hero.eyebrow" as="span">Smart Content Ecosystem</EditableText></span>
           <h1 className="mx-auto mt-5 max-w-3xl font-heading text-[clamp(2.4rem,5.5vw,4rem)] font-extrabold leading-[1.05] tracking-tight text-primary">
-            <EditableText id="eco.hero.h1" as="span" block>Growth. Reach.<br />Optimization.</EditableText>
+            <EditableText id="eco.hero.h1" as="span" block>Grow. Reach.<br />Optimization.</EditableText>
           </h1>
           <EditableText id="eco.hero.sub" as="p" className="mx-auto mt-5 max-w-2xl text-lg text-muted-foreground" block>
             Three levels that connect content production, platform management, distribution, and performance.

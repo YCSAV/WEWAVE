@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, Sprout, Radio, Gauge, Play, Smartphone, Tv, Eye } from 'lucide-react';
+import { ArrowUpRight, Sprout, Radio, Gauge, Play, Smartphone, Tv, Eye, Heart } from 'lucide-react';
 import { EditableText, Movable } from '@/components/edit/Editable';
 import { BRAND_MARKUP } from '@/components/BrandIcons';
 import HoverVideo from '@/components/HoverVideo';
+import HoverReel from '@/components/HoverReel';
 import { useYoutubeStats } from '@/hooks/useYoutubeStats';
 
 const PHASES = [
@@ -147,19 +148,26 @@ export default function Ecosystem() {
                           </div>
                         </div>
                         <span className="absolute left-3 top-3 rounded-full bg-background/90 px-3 py-1 text-[11px] font-semibold text-primary">{m.title}</span>
-                        {ytStats[m.videoId]?.viewCount != null && (
+                        {ex.phase === 'Optimization' && ytStats[m.videoId]?.likeCount != null ? (
+                          <span className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-full bg-background/90 px-2.5 py-1 text-[11px] font-semibold text-primary">
+                            <Heart className="h-3 w-3" /> {ytStats[m.videoId].likeCount.toLocaleString()} likes
+                          </span>
+                        ) : ytStats[m.videoId]?.viewCount != null ? (
                           <span className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-full bg-background/90 px-2.5 py-1 text-[11px] font-semibold text-primary">
                             <Eye className="h-3 w-3" /> {ytStats[m.videoId].viewCount.toLocaleString()} views
                           </span>
-                        )}
+                        ) : null}
                       </a>
                     ) : (
-                      <div className="relative overflow-hidden rounded-2xl border border-border bg-card" style={{ aspectRatio: '9 / 16', maxHeight: 520 }}>
-                        <iframe src={m.src} title={m.title} className="h-full w-full" loading="lazy" scrolling="no" frameBorder="0" />
-                        <div className="absolute inset-x-0 top-0 z-10 bg-background/95 px-3 py-2.5">
-                          <EditableText id={`eco.ex.${i}.media.${j}.t`} as="span" className="block truncate text-xs font-semibold text-primary" block>{m.title}</EditableText>
+                      <a href={m.src.replace('/embed', '')} target="_blank" rel="noopener" className="group relative block overflow-hidden rounded-2xl border border-border bg-muted">
+                        <div className="relative" style={{ aspectRatio: '9 / 16', maxHeight: 520 }}>
+                          <HoverReel src={m.src} title={m.title} />
+                          <div className="pointer-events-none absolute inset-0 grid place-items-center bg-primary/20 transition-colors group-hover:bg-primary/10">
+                            <span className="pointer-events-none grid h-12 w-12 place-items-center rounded-full bg-background/90 text-primary"><Play className="h-5 w-5 translate-x-0.5" fill="currentColor" /></span>
+                          </div>
                         </div>
-                      </div>
+                        <span className="absolute left-3 top-3 z-10 rounded-full bg-background/90 px-3 py-1 text-[11px] font-semibold text-primary"><EditableText id={`eco.ex.${i}.media.${j}.t`} as="span" block>{m.title}</EditableText></span>
+                      </a>
                     );
                     return (
                       <div key={j}>

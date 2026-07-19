@@ -4,11 +4,6 @@ import { base44 } from '@/api/base44Client';
 const STORAGE_KEY = 'wewave-edits:v1';
 const EMPTY = { text: {}, pos: {}, icons: {} };
 
-const readLocal = () => {
-  try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}') || {}; }
-  catch { return {}; }
-};
-
 const applyRecord = (store, r) => {
   if (r.kind === 'text') store.text[r.key] = r.text;
   else if (r.kind === 'pos') store.pos[r.key] = { x: r.pos_x, y: r.pos_y };
@@ -29,10 +24,13 @@ export function EditProvider({ children }) {
   // key -> { id, kind }
   const idMap = useRef({});
 
-  // Load overrides from the DB, then migrate any legacy local-storage edits up once.
+  // The saved source is the single canonical version. On load, drop any leftover
+  // per-browser overrides, then read shared overrides from the DB — that's where
+  // edits persist and sync across every device and every login.
   useEffect(() => {
     let cancelled = false;
     (async () => {
+      try { localStorage.removeItem(STORAGE_KEY); } catch {}
       try {
         const records = await base44.entities.SiteContent.list('-created_date', 1000);
         if (cancelled) return;
@@ -44,40 +42,9 @@ export function EditProvider({ children }) {
           applyRecord(next, r);
         }
         idMap.current = map;
-
-        // One-time migration: push any browser-local edits into the DB so there's one version.
-        const local = readLocal();
-        const localKeys = [
-          ...Object.keys(local.text || {}),
-          ...Object.keys(local.pos || {}),
-          ...Object.keys(local.icons || {}),
-        ];
-        if (localKeys.length) {
-          const creates = [];
-          for (const [k, v] of Object.entries(local.text || {}))
-            if (!map[k]) creates.push({ key: k, kind: 'text', text: v });
-          for (const [k, v] of Object.entries(local.pos || {}))
-            if (!map[k]) creates.push({ key: k, kind: 'pos', pos_x: v.x, pos_y: v.y });
-          for (const [k, v] of Object.entries(local.icons || {}))
-            if (!map[k]) creates.push({ key: k, kind: 'icon', icon: JSON.stringify(v) });
-
-          if (creates.length) {
-            try {
-              const created = await base44.entities.SiteContent.bulkCreate(creates);
-              for (const r of (Array.isArray(created) ? created : [created])) {
-                if (!r || !r.key) continue;
-                map[r.key] = { id: r.id, kind: r.kind };
-                applyRecord(next, r);
-              }
-            } catch {}
-          }
-          try { localStorage.removeItem(STORAGE_KEY); } catch {}
-        }
-
         if (!cancelled) setStore(next);
       } catch {
-        // DB unavailable — fall back to any local copy so editing still works offline.
-        if (!cancelled) setStore(readLocal() || EMPTY);
+        if (!cancelled) setStore(EMPTY);
       }
     })();
     return () => { cancelled = true; };

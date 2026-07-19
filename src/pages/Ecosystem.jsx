@@ -159,12 +159,9 @@ export default function Ecosystem() {
                         ) : null}
                       </a>
                     ) : (
-                      <a href={m.src.replace('/embed', '')} target="_blank" rel="noopener" className="group relative block overflow-hidden rounded-2xl border border-border bg-muted">
-                        <div className="relative" style={{ aspectRatio: '9 / 16', maxHeight: 520 }}>
+                      <a href={m.src.replace('/embed', '')} target="_blank" rel="noopener" className="group relative block w-full overflow-hidden rounded-2xl border border-border bg-muted">
+                        <div className="relative w-full aspect-[9/17]">
                           <HoverReel src={m.src} title={m.title} />
-                          <div className="pointer-events-none absolute inset-0 grid place-items-center bg-primary/20 transition-colors group-hover:bg-primary/10">
-                            <span className="pointer-events-none grid h-12 w-12 place-items-center rounded-full bg-background/90 text-primary"><Play className="h-5 w-5 translate-x-0.5" fill="currentColor" /></span>
-                          </div>
                         </div>
                         <span className="absolute left-3 top-3 z-10 rounded-full bg-background/90 px-3 py-1 text-[11px] font-semibold text-primary"><EditableText id={`eco.ex.${i}.media.${j}.t`} as="span" block>{m.title}</EditableText></span>
                       </a>

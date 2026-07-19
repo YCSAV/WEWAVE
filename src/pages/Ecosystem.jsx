@@ -16,8 +16,8 @@ const EXAMPLES = [
   {
     phase: 'Grow',
     media: [
-      { type: 'ig', src: 'https://www.instagram.com/p/DWU9mESD_s_/embed', title: 'Clothing Brand Reel', desc: 'Vertical brand reel for a clothing label.' },
-      { type: 'ig', src: 'https://www.instagram.com/p/DagVxgcydms/embed', title: 'Clothing Brand Reel', desc: 'Second vertical reel in the Growth series.' },
+      { type: 'ig', src: 'https://www.instagram.com/p/DWU9mESD_s_/embed', title: 'Sanctum Co.', desc: 'Vertical brand reel for a clothing label.' },
+      { type: 'ig', src: 'https://www.instagram.com/p/DagVxgcydms/embed', title: 'Sanctum Co.', desc: 'Second vertical reel in the Growth series.' },
     ],
   },
   {
@@ -154,8 +154,11 @@ export default function Ecosystem() {
                         )}
                       </a>
                     ) : (
-                      <div className="overflow-hidden rounded-2xl border border-border bg-card" style={{ aspectRatio: '9 / 16', maxHeight: 520 }}>
+                      <div className="relative overflow-hidden rounded-2xl border border-border bg-card" style={{ aspectRatio: '9 / 16', maxHeight: 520 }}>
                         <iframe src={m.src} title={m.title} className="h-full w-full" loading="lazy" scrolling="no" frameBorder="0" />
+                        <div className="absolute inset-x-0 top-0 z-10 bg-background/95 px-3 py-2.5">
+                          <EditableText id={`eco.ex.${i}.media.${j}.t`} as="span" className="block truncate text-xs font-semibold text-primary" block>{m.title}</EditableText>
+                        </div>
                       </div>
                     );
                     return (

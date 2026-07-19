@@ -19,7 +19,7 @@ export const LUCIDE = {
   MousePointer2, Palmtree, Sun, Waves, Coffee, Utensils, Mic,
 };
 
-/* Editable text — contentEditable in edit mode, persisted to localStorage by id */
+/* Editable text — contentEditable in edit mode, persisted to the shared SiteContent store by id */
 export function EditableText({ id, as: Tag = 'span', className, style, children, block }) {
   const { editMode, store, setText, setSelectedText } = useEdit();
   const saved = store.text?.[id];

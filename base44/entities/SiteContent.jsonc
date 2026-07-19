@@ -1,0 +1,57 @@
+{
+  "name": "SiteContent",
+  "type": "object",
+  "properties": {
+    "key": {
+      "type": "string",
+      "description": "Stable edit id, e.g. eco.hero.h1 or home.svc.video"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "text",
+        "pos",
+        "icon"
+      ],
+      "description": "Which kind of override this record holds"
+    },
+    "text": {
+      "type": "string",
+      "description": "HTML text override (when kind = text)"
+    },
+    "pos_x": {
+      "type": "number",
+      "description": "Movable x offset (when kind = pos)"
+    },
+    "pos_y": {
+      "type": "number",
+      "description": "Movable y offset (when kind = pos)"
+    },
+    "icon": {
+      "type": "string",
+      "description": "JSON-encoded icon override (when kind = icon)"
+    }
+  },
+  "required": [
+    "key",
+    "kind"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": true,
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

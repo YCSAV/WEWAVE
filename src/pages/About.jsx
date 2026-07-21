@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, Users, Camera, Sparkles, Phone, Mail } from 'lucide-react';
+import { ArrowUpRight, Users, Camera, Sparkles, Phone, Mail, Target, Clapperboard, Share2, BarChart3 } from 'lucide-react';
 import { EditableText } from '@/components/edit/Editable';
 
 const SLICE_LOGO = 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/040f619ea_slice-logo-watermark.png';
@@ -39,11 +39,20 @@ export default function About() {
               </div>
             </div>
             <div className="mt-8 grid grid-cols-4 gap-2">
-              {[1, 2, 3, 4].map((i) =>
-              <div key={i} className="aspect-square overflow-hidden rounded-xl ring-1 ring-border">
-                  
-                </div>
-              )}
+              {[
+                { word: 'Strategy', icon: Target },
+                { word: 'Production', icon: Clapperboard },
+                { word: 'Distribution', icon: Share2 },
+                { word: 'Optimization', icon: BarChart3 },
+              ].map((p, i) => {
+                const Icon = p.icon;
+                return (
+                  <div key={i} className="flex aspect-square flex-col items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-br from-primary/5 to-accent/10 ring-1 ring-border">
+                    <span className="grid h-11 w-11 place-items-center rounded-xl bg-primary text-primary-foreground"><Icon className="h-5 w-5" /></span>
+                    <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">{p.word}</span>
+                  </div>
+                );
+              })}
             </div>
           </div>
 

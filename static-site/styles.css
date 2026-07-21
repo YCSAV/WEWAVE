@@ -356,6 +356,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); margin: 0; color: var(--prima
 
 /* Studio */
 .studio-card .svc-img { background: linear-gradient(135deg, var(--primary), hsl(193 54% 18% / 0.7)); }
+.studio-card .studio-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .studio-card .studio-ic { position: absolute; left: 24px; top: 24px; width: 56px; height: 56px; display: grid; place-items: center; border-radius: 1rem; background: hsl(184 28% 97% / 0.9); color: var(--primary); }
 .studio-card .studio-watermark { position: absolute; bottom: -24px; right: -16px; width: 160px; height: 160px; color: hsl(172 60% 96% / 0.1); }
 .incl-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.625rem; }

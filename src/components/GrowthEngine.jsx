@@ -8,7 +8,7 @@ const CARD_BG = '#152a34';
 const CARD_BORDER = '#2a4b5d';
 const TEXT_BODY = '#a0b1b9';
 
-// WeWave Socials storefront logo — used as a faint watermark behind the wheel.
+// WaveUp Socials storefront logo — used as a faint watermark behind the wheel.
 const BRAND_LOGO = 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/0976eb1b7_image.png';
 
 // Four steps around the flywheel — clockwise from top. Text kept exactly as original.

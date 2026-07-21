@@ -7,7 +7,7 @@ import EditToolbar from '@/components/edit/EditToolbar';
 import AccountMenu from '@/components/layout/AccountMenu';
 import MobileTabBar from '@/components/layout/MobileTabBar';
 
-const BRAND_LOGO = 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/1c120a191_WeWaveSocialsStorefrontLogo.png';
+const BRAND_LOGO = 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/d3f0298ce_WaveUpSocialsStorefrontLogo.png';
 
 const NAV = [
   { label: 'Home', to: '/' },
@@ -42,10 +42,10 @@ export default function Layout() {
           <div className="container-wide flex h-[68px] items-center justify-between gap-6 safe-px">
             <Link to="/" className="flex items-center gap-3 group">
               <span className="grid h-11 w-11 place-items-center overflow-hidden rounded-full ring-1 ring-border bg-card">
-                <img src={BRAND_LOGO} alt="WeWave Socials" className="h-full w-full scale-110 object-cover" />
+                <img src={BRAND_LOGO} alt="WaveUp Socials" className="h-full w-full scale-110 object-cover" />
               </span>
               <span className="flex flex-col leading-none">
-                <EditableText id="nav.brand.name" as="span" className="font-heading text-[17px] font-extrabold tracking-tight text-primary">WeWave Socials</EditableText>
+                <EditableText id="nav.brand.name" as="span" className="font-heading text-[17px] font-extrabold tracking-tight text-primary">WaveUp Socials</EditableText>
               </span>
             </Link>
 
@@ -116,9 +116,9 @@ export default function Layout() {
               <div className="max-w-sm">
                 <Link to="/" className="flex items-center gap-3">
                   <span className="grid h-11 w-11 place-items-center overflow-hidden rounded-full ring-1 ring-border bg-card">
-                    <img src={BRAND_LOGO} alt="WeWave Socials" className="h-full w-full scale-110 object-cover" />
+                    <img src={BRAND_LOGO} alt="WaveUp Socials" className="h-full w-full scale-110 object-cover" />
                   </span>
-                  <EditableText id="footer.brand" as="span" className="font-heading text-[17px] font-extrabold tracking-tight text-primary">WeWave Socials</EditableText>
+                  <EditableText id="footer.brand" as="span" className="font-heading text-[17px] font-extrabold tracking-tight text-primary">WaveUp Socials</EditableText>
                 </Link>
                 <EditableText id="footer.tagline" as="p" className="mt-4 text-sm leading-relaxed text-muted-foreground" block>
                   Content built to convert — cinematic production and social media management under one roof, in Honolulu, Hawaiʻi.
@@ -139,9 +139,9 @@ export default function Layout() {
             </div>
 
             <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row">
-              <span>© {new Date().getFullYear()} WeWave Socials — temporary working brand</span>
+              <span>© {new Date().getFullYear()} WaveUp Socials — temporary working brand</span>
               <span className="grid h-9 w-9 place-items-center overflow-hidden rounded-full ring-1 ring-border bg-card">
-                <img src={BRAND_LOGO} alt="WeWave Socials watermark" className="h-full w-full scale-110 object-cover opacity-80" />
+                <img src={BRAND_LOGO} alt="WaveUp Socials watermark" className="h-full w-full scale-110 object-cover opacity-80" />
               </span>
             </div>
           </div>

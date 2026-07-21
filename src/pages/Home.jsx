@@ -64,7 +64,7 @@ const SVC_SOCIAL_IMG = 'https://media.base44.com/images/public/6a5a1601b834ac73c
 const ABOUT_IMG = 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/58acc856a_generated_image.png';
 const STATS_BG = 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/58acc856a_generated_image.png';
 const HERO_BG = 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/52b4cb76a_generated_image.png';
-const BRAND_LOGO = 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/1c120a191_WeWaveSocialsStorefrontLogo.png';
+const BRAND_LOGO = 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/d3f0298ce_WaveUpSocialsStorefrontLogo.png';
 
 const STATS = [
   { value: '2', label: 'Core services — Production + Social', icon: 'Clapperboard' },

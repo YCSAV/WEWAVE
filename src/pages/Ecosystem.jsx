@@ -18,28 +18,28 @@ const EXAMPLES = [
   {
     phase: 'Grow',
     media: [
-      { type: 'ig', src: 'https://www.instagram.com/p/DWU9mESD_s_/embed', title: 'Sanctum Co.', desc: 'Vertical brand reel for a clothing label.' },
-      { type: 'ig', src: 'https://www.instagram.com/p/DagVxgcydms/embed', title: 'Sanctum Co.', desc: 'Second vertical reel in the Growth series.' },
+      { type: 'ig', src: 'https://www.instagram.com/p/DWU9mESD_s_/embed', title: 'Sanctum Co.', desc: 'Vertical Reel — Sanctum Co. clothing drop' },
+      { type: 'ig', src: 'https://www.instagram.com/p/DagVxgcydms/embed', title: 'Sanctum Co.', desc: 'Vertical Reel — Sanctum Co. growth series, take two' },
     ],
   },
   {
     phase: 'Reach',
     media: [
-      { type: 'igH', src: 'https://www.instagram.com/p/DXZ27pvD_5l/embed', href: 'https://www.instagram.com/p/DXZ27pvD_5l', title: 'Sanctum Co.', desc: 'Horizontal brand film for Sanctum Co., shot by Drake Dela Cruz.' },
-      { type: 'igH', src: 'https://www.instagram.com/p/DXND14mDwW1/embed', href: 'https://www.instagram.com/p/DXND14mDwW1', title: 'Sanctum Co.', desc: 'A second horizontal brand film for Sanctum Co.' },
-      { type: 'yt', videoId: 'ld4I4f8DILA', href: 'https://www.youtube.com/watch?v=ld4I4f8DILA&t=16s', title: 'Farm Lovers Markets', desc: 'Cinematic market story — vendors, food, and culture.' },
-      { type: 'yt', videoId: 'Yyh1HHAIAQY', href: 'https://www.youtube.com/watch?v=Yyh1HHAIAQY&t=642s', title: 'Rigo', desc: 'Restaurant feature, Rigo.' },
-      { type: 'yt', videoId: 'A7YNhwUK1ds', href: 'https://www.youtube.com/watch?v=A7YNhwUK1ds&t=230s', title: "Carl's OG3 Burger Shop", desc: "Restaurant feature, Carl's OG3 Burger Shop." },
-      { type: 'yt', videoId: 'N1z8_66Gvh4', href: 'https://www.youtube.com/watch?v=N1z8_66Gvh4', title: 'Yung Chow — Red Light', desc: 'Cinematic Hip-Hop Music Video' },
-      { type: 'yt', videoId: 'JNcgShibW7k', href: 'https://www.youtube.com/watch?v=JNcgShibW7k', title: 'Yung Chow & Chase — Smoked Out', desc: 'Cinematic Hip-Hop Music Video' },
+      { type: 'igH', src: 'https://www.instagram.com/p/DXZ27pvD_5l/embed', href: 'https://www.instagram.com/p/DXZ27pvD_5l', title: 'Sanctum Co.', desc: 'Brand Film — Sanctum Co., directed by Drake Dela Cruz' },
+      { type: 'igH', src: 'https://www.instagram.com/p/DXND14mDwW1/embed', href: 'https://www.instagram.com/p/DXND14mDwW1', title: 'Sanctum Co.', desc: 'Brand Film — Sanctum Co., a second cinematic cut' },
+      { type: 'yt', videoId: 'ld4I4f8DILA', href: 'https://www.youtube.com/watch?v=ld4I4f8DILA&t=16s', title: 'Farm Lovers Markets', desc: 'Market Story — Farm Lovers Markets, vendors and culture' },
+      { type: 'yt', videoId: 'Yyh1HHAIAQY', href: 'https://www.youtube.com/watch?v=Yyh1HHAIAQY&t=642s', title: 'Rigo', desc: 'Restaurant Feature — Rigo' },
+      { type: 'yt', videoId: 'A7YNhwUK1ds', href: 'https://www.youtube.com/watch?v=A7YNhwUK1ds&t=230s', title: "Carl's OG3 Burger Shop", desc: "Restaurant Feature — Carl's OG3 Burger Shop" },
+      { type: 'yt', videoId: 'N1z8_66Gvh4', href: 'https://www.youtube.com/watch?v=N1z8_66Gvh4', title: 'Yung Chow — Red Light', desc: "Music Video — Yung Chow, 'Red Light'" },
+      { type: 'yt', videoId: 'JNcgShibW7k', href: 'https://www.youtube.com/watch?v=JNcgShibW7k', title: 'Yung Chow & Chase — Smoked Out', desc: "Music Video — Yung Chow & Chase, 'Smoked Out'" },
     ],
   },
   {
     phase: 'Optimization',
     media: [
-      { type: 'ig', src: 'https://www.instagram.com/p/DaB-Pj2xpbx/embed', title: 'Supreme Dumplings Reel', desc: 'Vertical dumplings reel for short-form discovery.' },
-      { type: 'ig', src: 'https://www.instagram.com/p/DYjIuzFR-0-/embed', title: 'Instagram Reel', desc: 'Cross-platform short-form reel.' },
-      { type: 'yt', videoId: '8rJSaUwmXxE', href: 'https://www.youtube.com/watch?v=8rJSaUwmXxE&t=26s', title: 'MW Restaurant', desc: 'Cinematic restaurant story for long-form trust.' },
+      { type: 'ig', src: 'https://www.instagram.com/p/DaB-Pj2xpbx/embed', title: 'Supreme Dumplings Reel', desc: 'Vertical Reel — Supreme Dumplings launch event' },
+      { type: 'ig', src: 'https://www.instagram.com/p/DYjIuzFR-0-/embed', title: 'Instagram Reel', desc: 'Short-Form Reel — cross-platform discovery cut' },
+      { type: 'yt', videoId: '8rJSaUwmXxE', href: 'https://www.youtube.com/watch?v=8rJSaUwmXxE&t=26s', title: 'MW Restaurant', desc: 'Brand Film — MW Restaurant, long-form trust story' },
     ],
   },
 ];
@@ -182,7 +182,7 @@ export default function Ecosystem() {
                     return (
                       <div key={j}>
                         {tile}
-                        <EditableText id={`eco.ex.${i}.media.${j}.desc`} as="p" className="mt-2 text-xs leading-snug text-muted-foreground" block>{m.desc}</EditableText>
+                        <EditableText id={`eco.ex.${i}.media.${j}.desc`} as="p" className="mt-2.5 text-sm font-semibold leading-snug text-foreground" block>{m.desc}</EditableText>
                       </div>
                     );
                   })}

@@ -8,9 +8,6 @@ const CARD_BG = '#152a34';
 const CARD_BORDER = '#2a4b5d';
 const TEXT_BODY = '#a0b1b9';
 
-// WaveUp Socials storefront logo — used as a faint watermark behind the wheel.
-const BRAND_LOGO = 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/d3f0298ce_WaveUpSocialsStorefrontLogo.png';
-
 // Four steps around the flywheel — clockwise from top. Text kept exactly as original.
 const NODES = [
   { n: '01', icon: 'Store',        title: 'Your Business',           caption: 'Products, services, and experience',           x: 50, y: 16 },
@@ -61,13 +58,6 @@ export default function GrowthEngine() {
       className="relative mx-auto w-full max-w-[520px]"
       style={{ borderRadius: '2rem', padding: '1.5rem' }}
     >
-      {/* Brand logo watermark behind the wheel */}
-      <img
-        src={BRAND_LOGO}
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute -inset-8 z-0 mx-auto h-full w-full object-contain opacity-25"
-      />
       {/* Circular flywheel (sm+) */}
       <div className="relative hidden aspect-square w-full sm:block">
         {/* Soft center glow */}

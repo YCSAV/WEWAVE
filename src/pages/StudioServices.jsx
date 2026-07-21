@@ -18,7 +18,7 @@ const SERVICES = [
       'Same-day selects',
     ],
     tags: ['Product', 'Food', 'Headshots', 'Events'],
-    img: null,
+    img: 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/fc1cfaecb_generated_image.png',
   },
   {
     icon: 'PenTool',
@@ -34,7 +34,7 @@ const SERVICES = [
       'Social templates',
     ],
     tags: ['Logos', 'Identity', 'Guidelines', 'Templates'],
-    img: null,
+    img: 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/cb1a6f1bc_generated_image.png',
   },
   {
     icon: 'Headphones',
@@ -50,7 +50,7 @@ const SERVICES = [
       'Format delivery for every platform',
     ],
     tags: ['Voiceover', 'Podcasts', 'Sound design', 'Mixing'],
-    img: null,
+    img: 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/a46cdea53_generated_image.png',
   },
   {
     icon: 'Globe',
@@ -66,7 +66,7 @@ const SERVICES = [
       'Ongoing updates and maintenance',
     ],
     tags: ['Landing pages', 'Business sites', 'Portfolio sites', 'Maintenance'],
-    img: null,
+    img: 'https://media.base44.com/images/public/6a5a1601b834ac73c4093efe/b3e44be7b_generated_image.png',
   },
 ];
 
@@ -132,7 +132,7 @@ export default function StudioServices() {
                   <article className="flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card">
                     <div className="relative h-44 overflow-hidden bg-gradient-to-br from-primary to-primary/70">
                       {s.img && <img src={s.img} alt="" className="absolute inset-0 h-full w-full object-cover ken-burns" loading="lazy" />}
-                      {!s.img && <Icon className="pointer-events-none absolute -bottom-6 -right-4 h-40 w-40 text-primary-foreground/10" />}
+                      <Icon className="pointer-events-none absolute -bottom-6 -right-4 h-40 w-40 text-primary-foreground/20" />
                       <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
                       <span className="absolute left-6 top-6 grid h-14 w-14 place-items-center rounded-2xl bg-background/90 text-primary">
                         <EditableIcon id={`studio.svc.${i}.icon`} as={Icon} iconClass="h-7 w-7" />

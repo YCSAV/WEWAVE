@@ -5,6 +5,7 @@ import { EditableText, Movable } from '@/components/edit/Editable';
 import { BRAND_MARKUP } from '@/components/BrandIcons';
 import HoverVideo from '@/components/HoverVideo';
 import HoverReel from '@/components/HoverReel';
+import HoverInsta from '@/components/HoverInsta';
 import { useYoutubeStats } from '@/hooks/useYoutubeStats';
 
 const PHASES = [
@@ -29,6 +30,8 @@ const EXAMPLES = [
       { type: 'yt', videoId: 'A7YNhwUK1ds', href: 'https://www.youtube.com/watch?v=A7YNhwUK1ds&t=230s', title: "Carl's OG3 Burger Shop", desc: 'Long-form burger shop feature.' },
       { type: 'yt', videoId: 'N1z8_66Gvh4', href: 'https://www.youtube.com/watch?v=N1z8_66Gvh4', title: 'Yung Chow — Red Light', desc: 'Music-driven short documentary.' },
       { type: 'yt', videoId: 'JNcgShibW7k', href: 'https://www.youtube.com/watch?v=JNcgShibW7k', title: 'Yung Chow & Chase — Smoked Out', desc: 'Performance and lifestyle long-form.' },
+      { type: 'igH', src: 'https://www.instagram.com/p/DXZ27pvD_5l/embed', href: 'https://www.instagram.com/p/DXZ27pvD_5l', title: 'Sanctum Co.', desc: 'Horizontal brand film for Sanctum Co., shot by Drake Dela Cruz.' },
+      { type: 'igH', src: 'https://www.instagram.com/p/DXND14mDwW1/embed', href: 'https://www.instagram.com/p/DXND14mDwW1', title: 'Sanctum Co.', desc: 'A second horizontal brand film for Sanctum Co.' },
     ],
   },
   {
@@ -157,6 +160,16 @@ export default function Ecosystem() {
                             <Eye className="h-3 w-3" /> {ytStats[m.videoId].viewCount.toLocaleString()} views
                           </span>
                         ) : null}
+                      </a>
+                    ) : m.type === 'igH' ? (
+                      <a href={m.href} target="_blank" rel="noopener" className="group relative block overflow-hidden rounded-2xl border border-border bg-muted">
+                        <div className="relative aspect-video">
+                          <HoverInsta src={m.src} title={m.title} />
+                          <div className="pointer-events-none absolute inset-0 grid place-items-center bg-primary/30 transition-colors group-hover:bg-primary/20">
+                            <span className="pointer-events-none grid h-12 w-12 place-items-center rounded-full bg-background/90 text-primary"><Play className="h-5 w-5 translate-x-0.5" fill="currentColor" /></span>
+                          </div>
+                        </div>
+                        <span className="absolute left-3 top-3 rounded-full bg-background/90 px-3 py-1 text-[11px] font-semibold text-primary">{m.title}</span>
                       </a>
                     ) : (
                       <a href={m.src.replace('/embed', '')} target="_blank" rel="noopener" className="group relative block w-full overflow-hidden rounded-2xl border border-border bg-muted">
